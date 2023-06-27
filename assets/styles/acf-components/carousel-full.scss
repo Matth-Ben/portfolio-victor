@@ -36,4 +36,8 @@
             @apply ts-body;
         }
     }
+
+    .carousel__navigation {
+        @apply flex gap-s absolute right-margin bottom-l z-[3];
+    }
 }

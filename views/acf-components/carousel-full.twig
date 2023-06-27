@@ -24,6 +24,14 @@
                     <h2 class="carousel__title">{{ data.title }}</h2>
                 {% endif %}
             </div>
+            <div class="carousel__navigation">
+                <button class="button button--svg">
+                    {% include "@icons/arrow-left.svg" %}
+                </button>
+                <button class="button button--svg">
+                    {% include "@icons/arrow-right.svg" %}
+                </button>
+            </div>
         </div>
     {% endif %}
 {% endif %}
