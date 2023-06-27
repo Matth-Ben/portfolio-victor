@@ -1,0 +1,112 @@
+{% extends "base-page.twig" %}
+
+{% import "@components/image.twig" as image %}
+
+{% block pageContent %}
+    <header class="container">
+        <nav class="flex justify-between items-center mt-margin">
+            <a class="block h-50 child:h-full" href="#0">
+                {% include "@assets/svg/logo.svg" %}
+            </a>
+            {% if menus['header-primary'] and menus['header-primary'].items %}
+                <ul class="flex gap-xl">
+                    {% for item in menus['header-primary'].items %}
+                        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </nav>
+    </header>
+
+    <div class="flex flex-col justify-end gap-m h-screen bg-darkultrasoft p-margin">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p class="ts-h5">Culpa exercitation eiusmod facilis eveniet voluptas</p>
+        <a class="button" href="#0">Découvrir</a>
+    </div>
+
+    {% set content = post.meta('content') %}
+
+    <pre>
+        {{ dump(content) }}
+    </pre>
+
+    {% if content %}
+        <div class="acf-flex-content">
+            {% for component in content %}
+                {% if component.acf_fc_layout %}
+                    {% set filename = component.acf_fc_layout|replace({'_': '-'}) %}
+                    {% set filename = filename ~ ".twig" %}
+                    {% set path = function('get_template_directory') ~ '/views/acf-components/' ~ filename %}
+
+                    {% if function('file_exists', path) %}
+                        {% import path as c %}
+                        {% set source = source(path) %}
+                        {% set variation = component.variation ? component.variation : 'default' %}
+
+                        {% include path with {
+                            variation: variation,
+                            data: component[component.acf_fc_layout]
+                        } %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {# <div class="container flex flex-col gap-l my-xxl">
+        <h2 class="ts-h3">Liste elements</h2>
+        <div class="grid grid-cols-12 gap">
+            {% for item in 1..3 %}
+                <div class="col-span-4">
+                    <a class="card card--event" href="#0">
+                        <div class="card__image">
+                            {{ image.default() }}
+                            <span class="card__status">Complet</span>
+                        </div>
+                        <div class="card__informations">
+                            <div class="card__taxonomies">
+                                <span>Catégorie</span>
+                                <span>Catégorie</span>
+                            </div>
+                            <div>
+                                <div class="card__title">Titre élément</div>
+                                <div class="card__description">Wolfgang Amadeus Mozart</div>
+                            </div>
+                            <div class="card__date">Vendredi 12 mai 19:30</div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div> #}
+
+    <div class="container grid grid-cols-12 gap">
+        <div class="col-span-full flex flex-col gap-m d:col-span-10">
+            <p class="ts-h2">Adipisicing natus placeat fugit pretium nec soluta aliquet diamlorem atque irure et minima eiusmod doloribus eleifend aliquid diam.</p>
+            <p>Légende (artiste, auteur, description)</p>
+            <a class="button" href="#0">Découvrir</a>
+        </div>
+    </div>
+
+
+    {# <pre>
+        {{ dump(menus) }}
+    </pre> #}
+{# 
+    <div class="container py-xxxl bg-light">
+        <h2 class="">Lorem ipsum dolor sit amet consectetur.</h2>
+        <p class="my-xxl">12</p>
+        <div class="grid grid-cols-12 gap">
+            <div class="py-xxl"></div>
+        </div>
+        <p class="my-xxl">6</p>
+        <div class="grid grid-cols-6 gap">
+            <div class="py-xxl"></div>
+        </div>
+        <p class="my-xxl">8</p>
+        <div class="grid grid-cols-8 gap">
+            <div class="py-xxl"></div>
+        </div>
+        <div class="w-col-3 py-xxxl bg-[red]"></div>
+    </div> #}
+{% endblock %}

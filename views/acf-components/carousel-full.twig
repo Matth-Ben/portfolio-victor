@@ -1,0 +1,34 @@
+{% import "@components/image.twig" as image %}
+
+{# Default #}
+{% if variation in 'default' %}
+    {% if data.items %}
+         <div class="carousel carousel--full">
+            {% for item in data.items %}
+                <div class="carousel__item-wrapper {% if loop.index == 1 %}active{% endif %}">
+                    <div class="carousel__item">
+                        <div class="carousel__item-image">
+                            {{ image.full(item.image) }}
+                        </div>
+                        <div class="carousel__item-informations">
+                            <p class="carousel__item-text">{{ item.text }}</p>
+                            {% if item.button.url %}
+                                <a class="carousel__item-button" href="{{ item.button.url }}" target="{{ item.button.target }}">{{ item.button.title }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="carousel__informations">
+                {% if data.title %}
+                    <h2 class="carousel__title">{{ data.title }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+
+{# Test #}
+{% if variation in 'test' %}
+    <p>Test</p>
+{% endif %}

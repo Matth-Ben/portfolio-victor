@@ -1,0 +1,51 @@
+{% macro default(data, params) %}
+    {% set image_id = data.id ? data.id : data %}
+
+    <div class="image aspect-[4/3] bg-darkultrasoft">
+    </div>
+
+	{# {% if image_id %}
+		{% set aspect_class = ratio ? ratio : 'aspect-[4/3]' %}
+
+		{% if image.subtype == "svg+xml" %}
+			{% set path = function('get_attached_file', image_id) %}
+
+			{% if path %}
+				{% include path %}
+			{% endif %}
+
+		{% else %}
+			<div class="image relative w-full childs:w-full childs:h-full child:absolute {{ aspect_class }} {% if contain %}childs:object-contain{% else %}
+				childs:object-cover{% endif %}" {% if parallax %}parallax{% endif %}>
+				{{ get_image_html(image_id) }}
+			</div>
+		{% endif %}
+
+	{% endif %} #}
+{% endmacro %}
+
+{% macro full(data) %}
+    {% set image_id = data.id ? data.id : data %}
+
+    <div class="image absolute inset-0 bg-darkultrasoft">
+    </div>
+
+	{# {% if image_id %}
+		{% set aspect_class = ratio ? ratio : 'aspect-[4/3]' %}
+
+		{% if image.subtype == "svg+xml" %}
+			{% set path = function('get_attached_file', image_id) %}
+
+			{% if path %}
+				{% include path %}
+			{% endif %}
+
+		{% else %}
+			<div class="image relative w-full childs:w-full childs:h-full child:absolute {{ aspect_class }} {% if contain %}childs:object-contain{% else %}
+				childs:object-cover{% endif %}" {% if parallax %}parallax{% endif %}>
+				{{ get_image_html(image_id) }}
+			</div>
+		{% endif %}
+
+	{% endif %} #}
+{% endmacro %}

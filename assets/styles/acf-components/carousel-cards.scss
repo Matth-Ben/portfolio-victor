@@ -1,0 +1,12 @@
+.carousel--cards {
+    overflow-x: hidden;
+
+    .flickity-viewport {
+        overflow: visible;
+    }
+
+    .carousel-cell {
+        width: get-width-of-columns(4);
+        margin-right: var(--gap);
+    }
+}
