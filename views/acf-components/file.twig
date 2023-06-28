@@ -1,0 +1,10 @@
+{% if data.text and data.file.url %}
+    <a class="file block" href="{{ function('get_attached_file', data.file.id) }}" download>
+        <div class="flex justify-between gap-l border border-dark px-l py-m rounded">
+            <div>{{ data.text }}</div>
+            <div class="child:max-w-[2.4rem] child:h-[2.4rem]">
+                {% include "@icons/download.svg" %}
+            </div>
+        </div>
+    </a>
+{% endif %}

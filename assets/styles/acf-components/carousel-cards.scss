@@ -1,6 +1,10 @@
 .carousel--cards {
     overflow-x: hidden;
 
+    .carousel__navigation {
+        @apply flex gap-s;
+    }
+
     .flickity-viewport {
         overflow: visible;
     }

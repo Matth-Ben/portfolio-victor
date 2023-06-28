@@ -1,0 +1,12 @@
+body.page {
+
+    #app-content > .acf-flex-content {
+        @apply flex flex-col gap-xxxl;
+    }
+
+    .carousel--cards,
+    .testimony,
+    .section {
+        @apply container;
+    }
+}

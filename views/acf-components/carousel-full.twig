@@ -5,8 +5,8 @@
     {% if data.items %}
          <div class="carousel carousel--full">
             {% for item in data.items %}
-                <div class="carousel__item-wrapper {% if loop.index == 1 %}active{% endif %}">
-                    <div class="carousel__item">
+                <div class="carousel__item {% if loop.index == 1 %}active{% endif %}">
+                    <div class="carousel__item-wrapper">
                         <div class="carousel__item-image">
                             {{ image.full(item.image) }}
                         </div>
@@ -25,10 +25,10 @@
                 {% endif %}
             </div>
             <div class="carousel__navigation">
-                <button class="button button--svg">
+                <button class="carousel__previous button button--icon button--light">
                     {% include "@icons/arrow-left.svg" %}
                 </button>
-                <button class="button button--svg">
+                <button class="carousel__next button button--icon button--light">
                     {% include "@icons/arrow-right.svg" %}
                 </button>
             </div>

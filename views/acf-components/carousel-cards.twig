@@ -5,7 +5,7 @@
     {% set posts = data[data.type_of_posts] %}
 
     {% if posts %}
-         <div class="carousel carousel--cards container flex flex-col gap-l my-xxl">
+         <div class="carousel carousel--cards flex flex-col gap-l">
             <h2 class="ts-h3">Liste elements</h2>
             <div class="carousel__items">
                 {% for p in posts %}
@@ -29,6 +29,20 @@
                         </a>
                     </div>
                 {% endfor %}
+            </div>
+            <div class="flex justify-between">
+                <a class="button button--light" href="#0">
+                    <span>Voir tout</span>
+                    {% include "@icons/chevron-right.svg" %}
+                </a>
+                <div class="carousel__navigation">
+                    <button class="carousel__previous button button--icon button--light">
+                        {% include "@icons/arrow-left.svg" %}
+                    </button>
+                    <button class="carousel__next button button--icon button--light">
+                        {% include "@icons/arrow-right.svg" %}
+                    </button>
+                </div>
             </div>
         </div>
     {% endif %}

@@ -1,11 +1,19 @@
 .button {
-    @apply ts-label flex justify-center items-center w-fit h-50 px-l text-white bg-dark rounded;
+    @apply ts-label flex justify-center items-center gap-s w-fit h-50 px-l text-white bg-dark rounded;
 
-    &--svg {
+    &--light {
+        @apply border border-dark text-dark bg-transparent;
+    }
+
+    &--icon {
         @apply w-50 h-50 p-0;
-        
-        svg {
-            @apply w-18 text-light;
-        }
+    }
+
+    span {
+        @apply shrink-0;
+    }
+
+    svg {
+        @apply shrink-0 max-w-[1.8rem] max-h-[1.8rem];
     }
 }

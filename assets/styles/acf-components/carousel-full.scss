@@ -1,14 +1,14 @@
 .carousel--full {
     @apply relative aspect-[72/31];
 
-    .carousel__item-wrapper {
+    .carousel__item {
         @apply absolute inset-0;
         
         &:not(.active) {
             @apply invisible;
         }
         
-        .carousel__item {
+        .carousel__item-wrapper {
             @apply h-full;
             
             .carousel__item-image {
@@ -33,7 +33,7 @@
         @apply flex justify-between absolute top-0 left-0 w-full px-margin pt-l;
 
         .carousel__title {
-            @apply ts-body;
+            @apply ts-body z-[3];
         }
     }
 

@@ -6,7 +6,7 @@ import taxi from './taxi'
 
 export default ( () => {
     window.data = data
-    taxi()
+    // taxi()
     split_text()
     show_elements()
     parallax()
