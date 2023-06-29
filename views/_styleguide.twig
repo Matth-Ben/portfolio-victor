@@ -55,7 +55,7 @@
                 {% for key, item in data.spacings %}
                     {% if key != 'desktop' %}
                         <div class="col-span-full flex flex-col gap-s pt-10">
-                            {{ key }}
+                            <p>{{ key }} <span class="opacity-40">- {{ item }}rem</span></p>
                             <div class="w-full pt-{{ key }} bg-dark"></div>
                         </div>
                     {% endif %}

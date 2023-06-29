@@ -3,21 +3,6 @@
 {% import "@components/image.twig" as image %}
 
 {% block pageContent %}
-    <header class="container">
-        <nav class="flex justify-between items-center mt-margin">
-            <a class="block h-50 child:h-full" href="#0">
-                {% include "@assets/svg/logo.svg" %}
-            </a>
-            {% if menus['header-primary'] and menus['header-primary'].items %}
-                <ul class="flex gap-xl">
-                    {% for item in menus['header-primary'].items %}
-                        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </nav>
-    </header>
-
     <div class="hero flex flex-col justify-end gap-m h-screen bg-darkultrasoft p-margin">
         <h1>Lorem ipsum dolor sit amet</h1>
         <p class="ts-h5">Culpa exercitation eiusmod facilis eveniet voluptas</p>

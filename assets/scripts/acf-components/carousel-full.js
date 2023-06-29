@@ -1,4 +1,4 @@
-import CarouselBasic from "../core/class-carousel-basic"
+import CarouselBasic from "../components/class-carousel-basic"
 
 document.addEventListener( 'DOMContentLoaded', () => {
     document.querySelectorAll( '.carousel--full' ).forEach( element => {

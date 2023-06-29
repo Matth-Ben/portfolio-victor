@@ -1,6 +1,7 @@
-body.page {
+#app-content.page  {
+    @apply mt-180;
 
-    #app-content > .acf-flex-content {
+    & > .acf-flex-content {
         @apply flex flex-col gap-xxxl;
     }
 

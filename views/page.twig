@@ -1,18 +1,5 @@
 {% extends "base-page.twig" %}
 
 {% block pageContent %}
-	<nav data-scene>
-        <ul class="flex gap-xl">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/page-test">Page test</a></li>
-        </ul>
-    </nav>
-
-	<article class="container">
-		<h2 scroll-show data-scene class="split">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ad facere eos repudiandae odit, repellat rem pariatur eligendi quisquam, odio, dignissimos magni rerum quaerat temporibus cupiditate? Quas veritatis esse consequatur aperiam quod, consequuntur quidem maxime veniam fugiat accusamus, minima dolor.</h2>
-		<h2 scroll-show data-scene class="split">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ad facere eos repudiandae odit, repellat rem pariatur eligendi quisquam, odio, dignissimos magni rerum quaerat temporibus cupiditate? Quas veritatis esse consequatur aperiam quod, consequuntur quidem maxime veniam fugiat accusamus, minima dolor.</h2>
-		<h2 scroll-show data-scene class="split">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ad facere eos repudiandae odit, repellat rem pariatur eligendi quisquam, odio, dignissimos magni rerum quaerat temporibus cupiditate? Quas veritatis esse consequatur aperiam quod, consequuntur quidem maxime veniam fugiat accusamus, minima dolor.</h2>
-		<h2 scroll-show data-scene class="split">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ad facere eos repudiandae odit, repellat rem pariatur eligendi quisquam, odio, dignissimos magni rerum quaerat temporibus cupiditate? Quas veritatis esse consequatur aperiam quod, consequuntur quidem maxime veniam fugiat accusamus, minima dolor.</h2>
-		{{ post.content }}
-	</article>
+	{% include "@components/flex-content.twig" with {content: post.meta('content')} %}
 {% endblock %}

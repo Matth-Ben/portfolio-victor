@@ -26,15 +26,11 @@ class CustomTransition extends Taxi.Transition {
 }
 
 export default () => {
-    const init = () => {
-        const options = {
-            transitions: {
-                default: CustomTransition
-            }
+    const options = {
+        transitions: {
+            default: CustomTransition
         }
-    
-        const taxi = new Taxi.Core( options )
     }
-    
-    document.addEventListener( 'DOMContentLoaded', init )
+
+    const taxi = new Taxi.Core( options )
 }

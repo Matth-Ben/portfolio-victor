@@ -1,4 +1,4 @@
-import Accordion from '../core/class-accordions'
+import Accordion from '../components/class-accordions'
 
 document.addEventListener( 'DOMContentLoaded', () => {
     document.querySelectorAll( '.accordion' ).forEach( element => {

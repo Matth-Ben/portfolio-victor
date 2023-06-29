@@ -7,6 +7,7 @@
 @import 'layouts/Home.scss';
 
 // components
+@import 'components/headroom.scss';
 @import 'components/button.scss';
 @import 'components/tag.scss';
 @import 'components/card.scss';
@@ -22,8 +23,4 @@
     --animation-duration: 0.92s;
     --animation-timing: cubic-bezier(0.215, 0.61, 0.352, 1);
     --animation-property: 0.92s cubic-bezier(0.215, 0.61, 0.352, 1);
-}
-
-.test {
-    width: get-width-of-columns(3);
 }
