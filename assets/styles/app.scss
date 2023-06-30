@@ -24,3 +24,12 @@
     --animation-timing: cubic-bezier(0.215, 0.61, 0.352, 1);
     --animation-property: 0.92s cubic-bezier(0.215, 0.61, 0.352, 1);
 }
+
+#app-body {
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+.hide-article #app-body {
+    opacity: 0;
+}

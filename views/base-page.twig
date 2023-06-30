@@ -4,7 +4,9 @@
 	<div data-taxi-view>
 		<div id="app-content" class="post-type-{{ post.post_type }} {{ body_class }}">
 			{% include "@components/header.twig" %}
-			{% block pageContent %}{% endblock %}
+			<div id="app-body">
+				{% block pageContent %}{% endblock %}
+			</div>
 		</div>
 	</div>
 {% endblock %}

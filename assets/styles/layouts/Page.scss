@@ -1,7 +1,7 @@
 #app-content.page  {
     @apply mt-180;
 
-    & > .acf-flex-content {
+    #app-body > .acf-flex-content {
         @apply flex flex-col gap-xxxl;
     }
 

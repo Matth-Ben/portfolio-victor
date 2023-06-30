@@ -1,5 +1,8 @@
 {% extends "base-page.twig" %}
 
 {% block pageContent %}
+	<div class="container mb-xl">
+		<h1>{{ post.title }}</h1>
+	</div>
 	{% include "@components/flex-content.twig" with {content: post.meta('content')} %}
 {% endblock %}

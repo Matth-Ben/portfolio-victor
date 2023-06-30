@@ -19,7 +19,7 @@ class CustomTransition extends Taxi.Transition {
     onEnter({ to, trigger, done }) {
         setTimeout( () => {
             document.body.classList.remove( 'hide-article' )
-            document.dispatchEvent( new CustomEvent( 'newPageLoaded' ) )
+            document.dispatchEvent( new CustomEvent( 'NewContentLoaded' ) )
             done()
         }, animation_duration )
     }

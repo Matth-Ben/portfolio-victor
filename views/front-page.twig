@@ -2,11 +2,25 @@
 
 {% import "@components/image.twig" as image %}
 
+{% set data = function('get_fields') %}
+
 {% block pageContent %}
-    <div class="hero flex flex-col justify-end gap-m h-screen bg-darkultrasoft p-margin">
-        <h1>Lorem ipsum dolor sit amet</h1>
-        <p class="ts-h5">Culpa exercitation eiusmod facilis eveniet voluptas</p>
-        <a class="button" href="#0">Découvrir</a>
+    <div class="hero flex relative h-screen p-margin">
+        <div class="absolute inset-0 w-full h-full z-[0]">
+            {{ image.full(data.hero.image) }}
+        </div>
+        <div class="absolute inset-0 w-full h-full bg-lightultrasoft z-[0]"></div>
+        <div class="flex flex-col justify-end gap-m z-[1]">
+            {% if data.hero.title %}
+                <h1>{{ data.hero.title }}</h1>
+            {% endif %}
+            {% if data.hero.subtitle %}
+                <p class="ts-h5">{{ data.hero.subtitle }}</p>
+            {% endif %}
+            {% if data.hero.button.url and data.hero.button.title %}
+                <a class="button" href="{{ data.hero.button.url }}" target="{{ data.hero.button.target }}">{{ data.hero.button.title }}</a>
+            {% endif %}
+        </div>
     </div>
 
     {% include "@components/flex-content.twig" with {content: post.meta('content')} %}

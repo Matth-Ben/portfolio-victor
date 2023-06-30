@@ -73,6 +73,9 @@ add_filter( 'timber/twig', function( $twig )
     $twig->addFunction( new \Timber\Twig_Function( 'timber_term', function( $id ) { return new \Timber\Term( $id ); } ) );
     // $twig->addFunction(new \Timber\Twig_Function('get_breadcrumbs', function() { return $this->get_breadcrumbs(); }));
     
+    // images
+    $twig->addFunction( new \Timber\Twig_Function( 'get_image_html', function( $id ) { return AppImages::get_image_html( $id ); } ) );
+    
 
     return $twig;
 } );

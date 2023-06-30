@@ -1,7 +1,7 @@
 #app-content.home {
     @apply mt-0;
 
-    & > .hero {
+    #app-body > .hero {
         @apply mb-xl;
     }
 }
