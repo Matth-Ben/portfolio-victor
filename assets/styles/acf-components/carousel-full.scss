@@ -1,5 +1,5 @@
 .carousel--full {
-    @apply relative aspect-[72/31];
+    @apply relative h-screen d:h-auto d:aspect-[72/31];
 
     .carousel__item {
         @apply absolute inset-0;

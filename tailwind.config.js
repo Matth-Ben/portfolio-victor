@@ -27,6 +27,7 @@ for ( let i = 0; i <= 500; i++ ) {
 }
 
 defaultSpacings.margin = 'var(--margin)'
+defaultSpacings.gap = 'var(--gap)'
 
 if ( data?.breakpoints ) {
     for ( const [key, item] of Object.entries( data.breakpoints ) ) {

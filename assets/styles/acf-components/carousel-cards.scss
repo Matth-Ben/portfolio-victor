@@ -1,16 +1,25 @@
 .carousel--cards {
-    overflow-x: hidden;
+    @apply overflow-x-hidden;
 
     .carousel__navigation {
         @apply flex gap-s;
     }
 
     .flickity-viewport {
-        overflow: visible;
+        @apply overflow-visible;
     }
 
     .carousel-cell {
-        width: get-width-of-columns(4);
-        margin-right: var(--gap);
+        @apply w-col-5 mr-gap;
+    }
+}
+
+@include desktop() {
+
+    .carousel--cards {
+    
+        .carousel-cell {
+            @apply w-col-4;
+        }
     }
 }
