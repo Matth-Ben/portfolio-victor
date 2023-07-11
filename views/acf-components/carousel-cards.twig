@@ -7,28 +7,30 @@
     {% if posts %}
          <div class="carousel carousel--cards flex flex-col gap-l">
             <h2 class="ts-h3">Liste elements</h2>
-            <div class="carousel__items">
-                {% for p in posts %}
-                    <div class="carousel-cell">
-                        <a class="card card--event" href="{{ p.url }}">
-                            <div class="card__image">
-                                {{ image.default(p.thumbnail) }}
-                                <span class="card__status">Complet</span>
-                            </div>
-                            <div class="card__informations">
-                                <div class="card__taxonomies">
-                                    <span>Catégorie</span>
-                                    <span>Catégorie</span>
+            <div class="carousel__items swiper">
+                <div class="swiper-wrapper">
+                    {% for p in posts %}
+                        <div class="swiper-slide">
+                            <a class="card card--event" href="{{ p.url }}">
+                                <div class="card__image">
+                                    {{ image.default(p.thumbnail) }}
+                                    <span class="card__status">Complet</span>
                                 </div>
-                                <div>
-                                    <div class="card__title">Titre élément {{ loop.index }}</div>
-                                    <div class="card__description">Wolfgang Amadeus Mozart</div>
+                                <div class="card__informations">
+                                    <div class="card__taxonomies">
+                                        <span>Catégorie</span>
+                                        <span>Catégorie</span>
+                                    </div>
+                                    <div>
+                                        <div class="card__title">Titre élément {{ loop.index }}</div>
+                                        <div class="card__description">Wolfgang Amadeus Mozart</div>
+                                    </div>
+                                    <div class="card__date">Vendredi 12 mai 19:30</div>
                                 </div>
-                                <div class="card__date">Vendredi 12 mai 19:30</div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
             <div class="flex justify-between">
                 <a class="button button--light" href="#0">

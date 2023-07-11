@@ -9,7 +9,6 @@ class AppImages
 {
     public static $sizes = [200, 768, 1024, 1440, 1920, 2560];
 
-
     public static function init()
     {
         add_theme_support( 'post-thumbnail' );

@@ -1,25 +1,20 @@
 .carousel--cards {
-    @apply overflow-x-hidden;
+
+    .carousel__items {
+        @apply w-full;
+    }
 
     .carousel__navigation {
         @apply flex gap-s;
     }
 
-    .flickity-viewport {
-        @apply overflow-visible;
-    }
-
-    .carousel-cell {
-        @apply w-col-5 mr-gap;
+    .swiper-slide {
+        // @apply w-col-4;
+        // margin-right: var(--gap);
+        // background-color: lightgray;
     }
 }
 
 @include desktop() {
 
-    .carousel--cards {
-    
-        .carousel-cell {
-            @apply w-col-4;
-        }
-    }
 }

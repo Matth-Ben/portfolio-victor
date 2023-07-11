@@ -27,6 +27,7 @@ class CustomTransition extends Taxi.Transition {
 
 export default () => {
     const options = {
+        links: 'a:not([target]):not([href^=\\#]):not([data-taxi-ignore]):not([download])',
         transitions: {
             default: CustomTransition
         }
