@@ -1,8 +1,8 @@
-import * as Taxi from '@unseenco/taxi'
+import { Core, Transition } from '@unseenco/taxi'
 
 const animation_duration = 300
 
-class CustomTransition extends Taxi.Transition {
+class CustomTransition extends Transition {
     /**
      * Handle the transition leaving the previous page.
      * @param { { from: HTMLElement, trigger: string|HTMLElement|false, done: function } } props
@@ -33,5 +33,5 @@ export default () => {
         }
     }
 
-    const taxi = new Taxi.Core( options )
+    const taxi = new Core( options )
 }
