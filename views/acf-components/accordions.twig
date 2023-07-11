@@ -1,5 +1,5 @@
 {% macro default(data) %}
-    {% if data.items %}
+    {% if data %}
         <div class="accordions {% if data.one_by_one %}one-by-one{% endif %}">
             {% for item in data.items %}
                 <div class="accordion">
