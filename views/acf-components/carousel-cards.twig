@@ -1,7 +1,7 @@
 {% import "@components/image.twig" as image %}
 
 {# Default #}
-{% if variation in 'default' %}
+{% macro default(data) %}
     {% set posts = data[data.type_of_posts] %}
 
     {% if posts %}
@@ -10,25 +10,7 @@
             <div class="carousel__items swiper">
                 <div class="swiper-wrapper">
                     {% for p in posts %}
-                        <div class="swiper-slide">
-                            <a class="card card--event" href="{{ p.url }}">
-                                <div class="card__image">
-                                    {{ image.default(p.thumbnail) }}
-                                    <span class="card__status">Complet</span>
-                                </div>
-                                <div class="card__informations">
-                                    <div class="card__taxonomies">
-                                        <span>Catégorie</span>
-                                        <span>Catégorie</span>
-                                    </div>
-                                    <div>
-                                        <div class="card__title">Titre élément {{ loop.index }}</div>
-                                        <div class="card__description">Wolfgang Amadeus Mozart</div>
-                                    </div>
-                                    <div class="card__date">Vendredi 12 mai 19:30</div>
-                                </div>
-                            </a>
-                        </div>
+                        {% include "@components/card.twig" with {data: p, variation: 'event'} %}
                     {% endfor %}
                 </div>
             </div>
@@ -48,9 +30,4 @@
             </div>
         </div>
     {% endif %}
-{% endif %}
-
-{# Test #}
-{% if variation in 'test' %}
-    <p>Test</p>
-{% endif %}
+{% endmacro %}

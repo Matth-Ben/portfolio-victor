@@ -1,7 +1,9 @@
-<div class="testimony grid grid-cols-12 gap">
-    <div class="col-span-full flex flex-col gap-m d:col-span-10">
-        <p class="ts-h2">Adipisicing natus placeat fugit pretium nec soluta aliquet diamlorem atque irure et minima eiusmod doloribus eleifend aliquid diam.</p>
-        <p>Légende (artiste, auteur, description)</p>
-        <a class="button" href="#0">Découvrir</a>
+{% macro default(data) %}
+    <div class="testimony grid grid-cols-12 gap">
+        <div class="col-span-full flex flex-col gap-m d:col-span-10">
+            <p class="ts-h2">Adipisicing natus placeat fugit pretium nec soluta aliquet diamlorem atque irure et minima eiusmod doloribus eleifend aliquid diam.</p>
+            <p>Légende (artiste, auteur, description)</p>
+            <a class="button" href="#0">Découvrir</a>
+        </div>
     </div>
-</div>
+{% endmacro %}

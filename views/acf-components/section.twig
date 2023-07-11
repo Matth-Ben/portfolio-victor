@@ -1,10 +1,12 @@
-<div class="section">
-    {% if data.title %}
-        <h2 class="mb-xxl">{{ data.title }}</h2>
-    {% endif %}
-    <div class="grid grid-cols-12 gap">
-        <div class="col-span-full d:col-span-8 d:col-start-3">
-            {% include "@components/flex-content.twig" with {content: data.content} %}
+{% macro default(data) %}
+    <div class="section">
+        {% if data.title %}
+            <h2 class="mb-xxl">{{ data.title }}</h2>
+        {% endif %}
+        <div class="grid grid-cols-12 gap">
+            <div class="col-span-full d:col-span-8 d:col-start-3">
+                {% include "@components/flex-content.twig" with {content: data.content} %}
+            </div>
         </div>
     </div>
-</div>
+{% endmacro %}
