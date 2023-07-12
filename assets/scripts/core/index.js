@@ -21,8 +21,8 @@ export default ( () => {
     } )
     
     document.addEventListener( 'NewContentLoaded', () => {
-        timelineAnimation()
         splitText()
+        timelineAnimation()
         parallax()
     } )
 } )()

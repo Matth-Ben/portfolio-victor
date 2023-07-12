@@ -18,8 +18,6 @@ export default function()
                     delay = index * 70 + 10
                     setTimeout( () => word.classList.add( 'is-show' ), delay )
                 } )
-
-                console.log(delay)
             } )
         } )
 
@@ -36,4 +34,6 @@ export default function()
             word.innerHTML = `<span class='rotate${randomIntFromInterval( -20, 20 )}'>` + word.innerHTML + `</span>`;
         } )
     } )
+
+    console.log('split')
 }

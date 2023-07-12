@@ -6,6 +6,7 @@ class TimelineAnimation
             document.body.classList.add( 'timeline-animation-init' )
         }
         this.observe()
+        console.log('observe')
     }
 
     is_in_view = element => {
@@ -50,6 +51,11 @@ class TimelineAnimation
     }
 
     observe = () => {
+        
+        if ( document.body.classList.contains( 'hide-article' ) ) {
+            return
+        }
+
         // elements
         document.querySelectorAll( '[show-elements]:not(.is-in-view)' ).forEach( parent => {
 
