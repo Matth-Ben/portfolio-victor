@@ -39,6 +39,12 @@ if ( data?.breakpoints ) {
     }
 }
 
+if ( data?.maxColumns ) {
+    for ( const [key, item] of Object.entries( data.maxColumns ) ) {
+        content += `grid-cols-${item} `
+    }
+}
+
 if ( data?.colors ) {
     colors.transparent = 'transparent'
     colors = { ...colors }
