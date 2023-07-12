@@ -34,6 +34,8 @@ if ( data?.breakpoints ) {
         if ( key !== 'desktop' ) {
             screens[key] = `${item}px`
         }
+
+        content += `${key}:block ${key}:hidden ${key}:grid `
     }
 }
 

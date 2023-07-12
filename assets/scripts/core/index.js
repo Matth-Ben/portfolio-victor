@@ -1,28 +1,28 @@
 import data from '../../../data.json'
-import parallax from './parallax'
-import show_elements from './show-elements'
-import split_text from './split-text'
+import smoothScroll from './smooth-scroll'
 import taxi from './taxi'
 import headroom from './headroom'
+import timelineAnimation from './timeline-animation'
+import splitText from './split-text'
+import parallax from './parallax'
+import gridHelper from './grid-helper'
 
 export default ( () => {
     window.data = data
     
     document.addEventListener( 'DOMContentLoaded', () => {
-        split_text()
-        show_elements()
-        parallax()
-        headroom()
         taxi()
+        headroom()
+        splitText()
+        timelineAnimation()
+        smoothScroll()
+        parallax()
+        gridHelper()
     } )
-
-    // document.addEventListener( 'DOMContentLoaded', () => {
-    //     // parallax()
-    // } )
-
-    // document.addEventListener( 'newPageLoaded', () => {
-    //     split_text()
-    //     show_elements()
-    //     // parallax()
-    // } )
+    
+    document.addEventListener( 'NewContentLoaded', () => {
+        timelineAnimation()
+        splitText()
+        parallax()
+    } )
 } )()

@@ -6,18 +6,19 @@ $context = \Timber\Timber::context();
 $templates = array( 'index.twig' );
 
 // styleguide
-if ( isset( $_GET['styleguide'] ) ) {
-	$path = get_template_directory() . '/data.json';
-	
-	if ( file_exists( $path ) ) {
-		$content = file_get_contents( $path );
-		$data = $content ? json_decode( $content, true ) : null;
+$path = get_template_directory() . '/data.json';
 
-		if ( $data ) {
-			$context['data'] = $data;
-			\Timber\Timber::render( array( '_styleguide.twig' ), $context );
-		}
+if ( file_exists( $path ) ) {
+	$content = file_get_contents( $path );
+	$app_data = $content ? json_decode( $content, true ) : null;
+
+	if ( $app_data ) {
+		$context['app_data'] = $app_data;
 	}
+}
+
+if ( isset( $_GET['styleguide'] ) ) {
+	\Timber\Timber::render( array( '_styleguide.twig' ), $context );
 }
 
 // home

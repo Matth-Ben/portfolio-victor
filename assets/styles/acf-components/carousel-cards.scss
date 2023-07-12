@@ -1,4 +1,5 @@
 .carousel--cards {
+    @apply overflow-x-clip;
 
     .carousel__items {
         @apply w-full;
@@ -6,6 +7,10 @@
 
     .carousel__navigation {
         @apply flex gap-s;
+    }
+
+    .swiper {
+        @apply overflow-visible;
     }
 
     .swiper-slide {
