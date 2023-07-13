@@ -9,8 +9,8 @@ import gridHelper from './grid-helper'
 
 export default ( () => {
     window.data = data
-    
-    document.addEventListener( 'DOMContentLoaded', () => {
+
+    document.addEventListener( 'ContentLoaded', () => {
         taxi()
         headroom()
         splitText()
@@ -24,5 +24,14 @@ export default ( () => {
         splitText()
         timelineAnimation()
         parallax()
+    } )
+
+    document.addEventListener( 'DOMContentLoaded', () => {
+
+        if ( !document.body.classList.contains( 'welcome' ) ) {
+            return
+        }
+
+        document.dispatchEvent( new CustomEvent( 'ContentLoaded' ) )
     } )
 } )()

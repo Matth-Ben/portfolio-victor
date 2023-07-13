@@ -23,7 +23,7 @@
             
                     .word.is-show span {
                         transform: translate3d(0, 0, 0);
-                        transition: transform 1s cubic-bezier(0, 0, 0.12, 0.98);
+                        transition: transform var(--animation-property);
                     }
                 }
             }
@@ -37,7 +37,7 @@
         &.is-in-view {
             opacity: 1;
             transform: translate3d(0, 0, 0);
-            transition: opacity .6s cubic-bezier(0, 0, 0.12, 0.98), transform 2s cubic-bezier(0, 0, 0.12, 0.98);
+            transition: opacity var(--animation-property), transform var(--animation-property);
         }
     }
 }

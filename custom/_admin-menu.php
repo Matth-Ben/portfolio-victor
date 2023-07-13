@@ -22,5 +22,5 @@ function danka_custom_menu_order( $menu_order )
 
     return $custom_menu_order;
 }
-add_filter( 'custom_menu_order', 'danka_custom_menu_order', 10, 1 );
-add_filter( 'menu_order', 'danka_custom_menu_order', 10, 1 );
+// add_filter( 'custom_menu_order', 'danka_custom_menu_order', 10, 1 );
+// add_filter( 'menu_order', 'danka_custom_menu_order', 10, 1 );

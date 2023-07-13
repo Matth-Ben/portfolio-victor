@@ -5,6 +5,9 @@ add_filter( 'timber/context', function( $context )
 {
     $context['menus'] = get_all_menus();
     $context['assets'] = get_template_directory_uri() . '/assets';
+    $context['_session'] = $_SESSION;
+    $context['_get'] = $_GET;
+    $context['_post'] = $_POST;
 
     return $context;
 } );
