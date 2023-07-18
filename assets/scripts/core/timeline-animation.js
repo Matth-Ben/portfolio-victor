@@ -22,16 +22,17 @@ class TimelineAnimation
                     elements.push( [e, delay] )
                 } )
                 
-                console.log(max_delay)
-                console.log(elements)
-                debugger
+                // console.log(max_delay)
+                // console.log(elements)
+                // debugger
 
                 elements.forEach( ( item, index ) => {
-                    item[1] = item[1] != 0 ? (item[1] - max_delay) * -1 : item[1]
+                    item[1] = item[1] - max_delay
+                    item[1] = item[1] < 0 ? item[1] * -1 : item[1]
                 } )
 
-                console.log(elements)
-                debugger
+                // console.log(elements)
+                // debugger
 
                 elements.forEach( item => {
                     setTimeout( () => {

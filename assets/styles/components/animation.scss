@@ -15,6 +15,7 @@
                     span {
                         display: inline-block;
                         transform: translate3d(0, 150%, 0) rotate(-4deg);
+                        transition: transform var(--animation-property);
                     }
                 }
         
@@ -23,7 +24,6 @@
             
                     .word.is-show span {
                         transform: translate3d(0, 0, 0);
-                        transition: transform var(--animation-property);
                     }
                 }
             }
@@ -33,11 +33,11 @@
     &--fade-up {
         opacity: 0;
         transform: translate3d(0, var(--spacing-l), 0);
+        transition: opacity var(--animation-property), transform var(--animation-property);
 
         &.is-in-view {
             opacity: 1;
             transform: translate3d(0, 0, 0);
-            transition: opacity var(--animation-property), transform var(--animation-property);
         }
     }
 }
