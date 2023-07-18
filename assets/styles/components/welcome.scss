@@ -1,4 +1,4 @@
-.welcome {
+body.welcome .welcome {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +19,6 @@
     }
 }
 
-// body:not(.welcome) .welcome {
-//     display: none;
-// }
+body:not(.welcome) .welcome {
+    display: none;
+}

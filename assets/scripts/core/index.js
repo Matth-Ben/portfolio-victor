@@ -28,7 +28,7 @@ export default ( () => {
 
     document.addEventListener( 'DOMContentLoaded', () => {
 
-        if ( !document.body.classList.contains( 'welcome' ) ) {
+        if ( document.body.classList.contains( 'welcome' ) ) {
             return
         }
 

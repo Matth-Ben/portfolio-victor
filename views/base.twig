@@ -13,7 +13,7 @@
 	{{ function('wp_head') }}
 </head>
 
-<body class="{{ body_class }}">
+<body class="{{ body_class }} {% if _context._session.welcome %}welcome{% endif %}">
 	{% include "@components/header.twig" %}
 	<div data-taxi id="app" role="main">
 		{% block content %}{% endblock %}

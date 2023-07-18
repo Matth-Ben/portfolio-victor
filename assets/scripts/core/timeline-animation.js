@@ -7,6 +7,40 @@ class TimelineAnimation
         }
         this.observe()
         console.log('observe')
+
+        ////
+        document.addEventListener( 'HideElements', () => {
+            document.querySelectorAll( '[show-elements]' ).forEach( element => {
+                let max_delay = 0,
+                    elements = []
+
+                element.querySelectorAll( '[show-element]' ).forEach( e => {
+                    const delay = parseInt( this.get_delay( e ) )
+
+                    max_delay = max_delay < delay ? delay : max_delay
+
+                    elements.push( [e, delay] )
+                } )
+                
+                console.log(max_delay)
+                console.log(elements)
+                debugger
+
+                elements.forEach( ( item, index ) => {
+                    item[1] = item[1] != 0 ? (item[1] - max_delay) * -1 : item[1]
+                } )
+
+                console.log(elements)
+                debugger
+
+                elements.forEach( item => {
+                    setTimeout( () => {
+                        item[0].classList.remove( 'is-in-view' )
+                    }, item[1] )
+                } )
+            } )
+        } )
+        ////
     }
 
     is_in_view = element => {

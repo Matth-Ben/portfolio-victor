@@ -1,8 +1,8 @@
-export default (() =>
+export default ( () =>
 {
     document.addEventListener( 'DOMContentLoaded', () => {
 
-        if ( !document.body.classList.contains( 'welcome' ) ) {
+        if ( document.body.classList.contains( 'welcome' ) ) {
             const welcome = document.querySelector( 'body > .welcome' )
             const text = welcome ? welcome.querySelector( 'p' ) : null
 
@@ -19,4 +19,4 @@ export default (() =>
             }
         }
     } )
-})()
+} )()

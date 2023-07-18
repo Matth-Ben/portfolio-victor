@@ -15,7 +15,7 @@ const init = () => {
                     responsive[breakpoint] = {}
 
                     if ( data?.gutters[size] ) {
-                        responsive[breakpoint].spaceBetween = data.gutters[size] * 10
+                        // responsive[breakpoint].spaceBetween = data.gutters[size] * 10
                     }
                     
                     if ( data?.columns[size] ) {
@@ -34,23 +34,6 @@ const init = () => {
             swiper.on('slideChange', function (e) {
                 console.log('slide changed', e);
             });
-
-
-            // const flickity = new Flickity( carousel, {
-            //     cellAlign: 'left',
-            //     prevNextButtons: false,
-            //     pageDots: false,
-            //     // wrapAround: true,
-            //     // contain: true, // bug
-            // } )
-    
-            // flickity.on( 'change', index => {
-            //     const count = items.length - 1
-    
-            //     if ( index > count - 3 ) {
-            //         flickity.select( count - 3 + 1 )
-            //     }
-            // } )
     
             previous.addEventListener( 'click', () => swiper.slidePrev( 300 ) )
             next.addEventListener( 'click', () => swiper.slideNext( 300 ) )
@@ -58,5 +41,4 @@ const init = () => {
     } )
 }
 
-document.addEventListener( 'DOMContentLoaded', init )
-document.addEventListener( 'NewContentLoaded', init )
+document.addEventListener( 'ContentLoaded', init )
