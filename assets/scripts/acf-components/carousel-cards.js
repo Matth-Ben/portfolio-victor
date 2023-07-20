@@ -41,4 +41,5 @@ const init = () => {
     } )
 }
 
+document.addEventListener( 'NewContentLoaded', init )
 document.addEventListener( 'ContentLoaded', init )

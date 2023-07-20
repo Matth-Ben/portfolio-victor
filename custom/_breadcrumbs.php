@@ -1,6 +1,6 @@
 <?php
 
-class CustomBreadcrumbs
+class Breadcrumbs
 {
     public function __construct()
     {
@@ -311,15 +311,14 @@ class CustomBreadcrumbs
 
                 if ( $archive ) {
                     $archive_ancestors = get_item_ancestors_by_url( $archive['url'], $menu->items );
-
                     
                     if ( $archive_ancestors ) {
                         unset( $archive_ancestors[count($archive_ancestors) - 1] );
                         $items = array_merge( $items, $archive_ancestors );
                     }
-                }
 
-                 $items[] = $archive;
+                    $items[] = $archive;
+                }
             }
 
             // S'il existe des posts parents
@@ -342,7 +341,7 @@ class CustomBreadcrumbs
                 }
             }
             
-            else {
+            elseif ( $menu ) {
                 $menu_ancestors = get_item_ancestors_by_id( $post->ID, $menu->items );
     
                 if ( $menu_ancestors ) {
@@ -393,4 +392,4 @@ class CustomBreadcrumbs
     }
 }
 
-new  CustomBreadcrumbs();
+new  Breadcrumbs();

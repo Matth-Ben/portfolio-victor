@@ -9,7 +9,9 @@
             <div class="carousel__items swiper animation--fade-up" show-element show-delay="300">
                 <div class="swiper-wrapper">
                     {% for p in posts %}
-                        {{ card.default(p) }}
+                        <div class="swiper-slide">
+                            {{ card.default(p) }}
+                        </div>
                     {% endfor %}
                 </div>
             </div>

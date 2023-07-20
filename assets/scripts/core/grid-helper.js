@@ -1,4 +1,5 @@
-export default () => {
+export default function()
+{
     if ( !document.body.classList.contains( 'grid-helper-init' ) ) {
         document.body.classList.add( 'grid-helper-init' )
         

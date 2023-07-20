@@ -65,6 +65,11 @@ add_filter( 'timber/twig', function( $twig )
     } ) );
 
 
+    // custom
+    $twig->addFunction( new \Timber\Twig_Function( 'get_breadcrumbs', function() { return Breadcrumbs::get_breadcrumbs(); } ) );
+
+
+
     //
     // $twig->addFunction( new \Timber\Twig_Function( 'add_style', function( $path ) { $this->enqueue_asset( $path, 'css' ); } ) );
     // $twig->addFunction( new \Timber\Twig_Function( 'add_script', function( $path ) { $this->enqueue_asset( $path, 'js' ); } ) );
