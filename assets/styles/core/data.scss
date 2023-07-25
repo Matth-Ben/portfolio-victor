@@ -72,18 +72,16 @@ $data: (
       line-height: 2.4rem,
       font-family: "primary"
     ),
-    specifics: (
-      label: (
-        font-size: 1.6rem,
-        line-height: 1.8rem,
-        font-family: "heading"
-      ),
-      mini: (
-        font-size: 1.2rem,
-        line-height: 1.4rem,
-        font-weight: 400,
-        font-family: "heading"
-      )
+    label: (
+      font-size: 1.6rem,
+      line-height: 1.8rem,
+      font-family: "heading"
+    ),
+    mini: (
+      font-size: 1.2rem,
+      line-height: 1.4rem,
+      font-weight: 400,
+      font-family: "heading"
     ),
     desktop: (
       h1: (

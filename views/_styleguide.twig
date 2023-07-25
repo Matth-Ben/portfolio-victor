@@ -34,7 +34,7 @@
                 {% endfor %}
             </div>
 
-            {# Titres et paragraphe #}
+            {# Styles de texte #}
             <div>
                 {% for key, item in app_data.textStyles %}
                     {% if key in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] %}
@@ -43,6 +43,12 @@
                 {% endfor %}
                 <br>
                 <p>Paragraphe</p>
+                <br>
+                {% for key, item in app_data.textStyles %}
+                    {% if key not in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'titles', 'body', 'desktop'] %}
+                        <div class="ts-{{ key }}">{{ key }}</div>
+                    {% endif %}
+                {% endfor %}
             </div>
 
             {# Espacements #}
@@ -74,16 +80,6 @@
                     <div></div>
                     <div></div>
                     <div></div>
-                </div>
-            </div>
-
-            {# Spécifiques #}
-            <div class="grid grid-cols-12 gap-y-s">
-                <div class="col-span-full ts-h2 mb-m">Spécifiques</div>
-                <div class="col-span-full flex flex-col gap-s">
-                    {% for key, item in app_data.textStyles.specifics %}
-                        <p class="ts-{{ key }}">{{ key }}</p>
-                    {% endfor %}
                 </div>
             </div>
         {% endif %}
