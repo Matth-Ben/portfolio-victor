@@ -351,18 +351,6 @@ class Breadcrumbs
             }
         }
 
-        else if ( is_post_type_archive() ) {
-            
-            if ( isset( $archive['url'] ) ) {
-                $archive_ancestors = get_item_ancestors_by_url( $archive['url'], $menu->items );
-    
-                if ( $archive_ancestors ) {
-                    unset( $archive_ancestors[count($archive_ancestors) - 1] );
-                    $items = array_merge( $items, $archive_ancestors );
-                }
-            }
-        }
-
         // Si la page web affiche un post, l'ajouter
         if ( is_singular() ) {
             $items[] = [
@@ -376,6 +364,12 @@ class Breadcrumbs
             $post_type = $wp_query->query['post_type'];
             $text = $wp_query->queried_object->labels->name;
             $url = get_post_type_archive_link( $post_type );
+            $archive_ancestors = get_item_ancestors_by_url( $url, $menu->items );
+
+            if ( $archive_ancestors ) {
+                unset( $archive_ancestors[count($archive_ancestors) - 1] );
+                $items = array_merge( $items, $archive_ancestors );
+            }
             
             if ( function_exists( 'get_field' ) ) {
                 $acf_title = get_field( 'title', $post_type . '_archive' );

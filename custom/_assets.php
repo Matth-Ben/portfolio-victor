@@ -6,6 +6,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 	wp_dequeue_script( 'jquery' );
 
-	wp_enqueue_style( 'tailpress', get_template_directory_uri() . '/build/app.css', array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', get_template_directory_uri() . '/build/app.js', array(), $theme->get( 'Version' ) );
+	wp_enqueue_style( 'app', get_template_directory_uri() . '/build/app.css', array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/build/app.js', array(), $theme->get( 'Version' ) );
 } );

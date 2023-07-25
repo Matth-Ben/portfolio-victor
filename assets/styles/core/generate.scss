@@ -337,6 +337,6 @@
     }
 
     :root {
-        --width-of-layout: calc(100vw - 2 * var(--margin));
+        --width-of-layout: calc(100vw - var(--scrollbar-width) - 2 * var(--margin));
     }
 }

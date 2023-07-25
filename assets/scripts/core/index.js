@@ -6,6 +6,7 @@ import timelineAnimation from './timeline-animation'
 import splitText from './split-text'
 import parallax from './parallax'
 import gridHelper from './grid-helper'
+import scrollbarWidth from './scrollbar-width'
 
 export default ( () => {
     window.data = data
@@ -18,12 +19,14 @@ export default ( () => {
         smoothScroll()
         parallax()
         gridHelper()
+        scrollbarWidth()
     } )
     
     document.addEventListener( 'NewContentLoaded', () => {
         splitText()
         timelineAnimation()
         parallax()
+        scrollbarWidth()
     } )
 
     document.addEventListener( 'DOMContentLoaded', () => {

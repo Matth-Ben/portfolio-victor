@@ -34,6 +34,4 @@ export default function()
             word.innerHTML = `<span class='rotate${randomIntFromInterval( -20, 20 )}'>` + word.innerHTML + `</span>`;
         } )
     } )
-
-    console.log('split')
 }

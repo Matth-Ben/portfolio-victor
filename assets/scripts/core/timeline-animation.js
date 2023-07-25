@@ -6,7 +6,6 @@ class TimelineAnimation
             document.body.classList.add( 'timeline-animation-init' )
         }
         this.observe()
-        console.log('observe')
 
         ////
         document.addEventListener( 'HideElements', () => {
@@ -85,6 +84,15 @@ class TimelineAnimation
         }, delay )
     }
 
+    show_elements = ( parent, delay ) => {
+        setTimeout( () => {
+            this.show_element( parent )
+            parent.querySelectorAll( '[show-element]:not(.is-in-view)' ).forEach( element => {
+                this.show_element( element, this.get_delay( element ) )
+            } )
+        }, delay )
+    }
+
     observe = () => {
         
         if ( document.body.classList.contains( 'hide-article' ) ) {
@@ -95,17 +103,26 @@ class TimelineAnimation
         document.querySelectorAll( '[show-elements]:not(.is-in-view)' ).forEach( parent => {
 
             if ( this.is_in_view( parent ) ) {
-                const delay = this.get_delay( parent )
-
-                setTimeout( () => {
-                    this.show_element(parent)
-                    parent.querySelectorAll( '[show-element]:not(.is-in-view)' ).forEach( element => {
-                        this.show_element( element, this.get_delay( element ) )
-                    } )
-                }, delay )
+                this.show_elements( parent, this.get_delay( parent ) )
             }
         } )
         
+        // mobile elements
+        document.querySelectorAll( '[show-mobile-elements]:not(.is-in-view)' ).forEach( parent => {
+
+            if ( !this.is_desktop() && this.is_in_view( parent ) ) {
+                this.show_elements( parent, this.get_delay( parent ) )
+            }
+        } )
+        
+        // desktop elements
+        document.querySelectorAll( '[show-desktop-elements]:not(.is-in-view)' ).forEach( parent => {
+
+            if ( this.is_desktop() && this.is_in_view( parent ) ) {
+                this.show_elements( parent, this.get_delay( parent ) )
+            }
+        } )
+
         // element
         document.querySelectorAll( '[show-element]:not(.is-in-view)' ).forEach( element => {
 
@@ -114,6 +131,30 @@ class TimelineAnimation
             }
            
             if ( this.is_in_view( element ) ) {
+                this.show_element( element, this.get_delay( element ) )
+            }
+        } )
+        
+        // mobile element
+        document.querySelectorAll( '[show-mobile-element]:not(.is-in-view)' ).forEach( element => {
+
+            if ( element.closest( '[show-mobile-elements]:not(.is-in-view)' ) !== null ) {
+                return
+            }
+           
+            if ( !this.is_desktop() && this.is_in_view( element ) ) {
+                this.show_element( element, this.get_delay( element ) )
+            }
+        } )
+
+        // desktop element
+        document.querySelectorAll( '[show-desktop-element]:not(.is-in-view)' ).forEach( element => {
+
+            if ( element.closest( '[show-desktop-elements]:not(.is-in-view)' ) !== null ) {
+                return
+            }
+           
+            if ( this.is_desktop() && this.is_in_view( element ) ) {
                 this.show_element( element, this.get_delay( element ) )
             }
         } )
