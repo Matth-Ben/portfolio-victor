@@ -1,5 +1,6 @@
 <?php
 
+require_once get_template_directory() . '/custom/_acf-synchronisation.php';
 require_once get_template_directory() . '/custom/_admin-menu.php';
 require_once get_template_directory() . '/custom/_assets.php';
 require_once get_template_directory() . '/custom/_breadcrumbs.php';
