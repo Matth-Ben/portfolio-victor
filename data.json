@@ -29,6 +29,7 @@
         "darkultrasoft": "rgba(0,0,0,.2)",
         "lightsoft": "rgba(255,255,255,.5)",
         "lightultrasoft": "rgba(255,255,255,.2)",
+        "red": "#EA4E32",
         "primary": "#673FFF",
         "secondary": "#230F50"
     },

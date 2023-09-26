@@ -15,4 +15,10 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'    => 'Réseaux Sociaux',
         'parent_slug'   => 'settings-danka',
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Bandeau information',
+        'menu_title'    => 'Bandeau information',
+        'parent_slug'   => 'settings-danka',
+    ));
 }
