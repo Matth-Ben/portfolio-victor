@@ -67,6 +67,8 @@ add_filter( 'timber/twig', function( $twig )
 
     // custom
     $twig->addFunction( new \Timber\Twig_Function( 'get_breadcrumbs', function() { return Breadcrumbs::get_breadcrumbs(); } ) );
+    $twig->addFunction( new \Timber\Twig_Function( 'get_share', function() { return SocialNetwork::get_share(); } ) );
+    $twig->addFunction( new \Timber\Twig_Function( 'get_social_network', function() { return SocialNetwork::get_social_network(); } ) );
 
 
 
