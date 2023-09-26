@@ -1,6 +1,11 @@
-{# see `archive.twig` for an alternative strategy of extending templates #}
-{% extends "base.twig" %}
+{% extends "base-page.twig" %}
 
 {% block content %}
-	
+  <div class="content-wrapper">
+    {% for post in posts %}
+      <pre>
+        {{ dump(post.post_title) }}
+      </pre>
+    {% endfor %}
+  </div>
 {% endblock %}
