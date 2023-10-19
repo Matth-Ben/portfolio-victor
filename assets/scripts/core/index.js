@@ -7,11 +7,14 @@ import splitText from './split-text'
 import parallax from './parallax'
 import gridHelper from './grid-helper'
 import scrollbarWidth from './scrollbar-width'
+import responsiveImages from './responsive-images'
+import windowResizeEvent from './window-resize-event'
 
 export default ( () => {
     window.data = data
 
     document.addEventListener( 'ContentLoaded', () => {
+        windowResizeEvent()
         taxi()
         headroom()
         splitText()
@@ -20,6 +23,7 @@ export default ( () => {
         parallax()
         gridHelper()
         scrollbarWidth()
+        responsiveImages()
     } )
     
     document.addEventListener( 'NewContentLoaded', () => {
@@ -27,6 +31,11 @@ export default ( () => {
         timelineAnimation()
         parallax()
         scrollbarWidth()
+        responsiveImages()
+    } )
+    
+    document.addEventListener( 'windowResized', () => {
+        responsiveImages()
     } )
 
     document.addEventListener( 'DOMContentLoaded', () => {

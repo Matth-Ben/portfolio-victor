@@ -17,6 +17,7 @@ class CustomTransition extends Transition {
      * @param { { to: HTMLElement, trigger: string|HTMLElement|false, done: function } } props
     */
     onEnter({ to, trigger, done }) {
+        lenis.scrollTo( 0, { duration: animation_duration / 1000 - .1 } )
         setTimeout( () => {
             document.body.classList.remove( 'hide-article' )
             document.dispatchEvent( new CustomEvent( 'NewContentLoaded' ) )

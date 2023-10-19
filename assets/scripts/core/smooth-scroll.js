@@ -2,6 +2,7 @@ import Lenis from '@studio-freight/lenis'
 
 export default () => {
     const lenis = new Lenis()
+    window.lenis = lenis
     
     lenis.on('scroll', (e) => {
         // console.log(e)
