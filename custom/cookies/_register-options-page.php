@@ -23,7 +23,7 @@ function danka_settings__render_options_page__cookies()
 /**
  * Register options page "Settings"
  */
-function af_register_options_page__settings()
+function danka__cookies__register_options_page()
 {
     add_submenu_page(
         'options-general.php',                              // parent
@@ -36,4 +36,4 @@ function af_register_options_page__settings()
     );
 }
 
-add_action('admin_menu', 'af_register_options_page__settings');
+add_action('admin_menu', 'danka__cookies__register_options_page');
