@@ -23,13 +23,13 @@ function danka_register_settings__cookies()
         $section_name,                                          // section
         array( 'name' => $section_name . '__title' )
     );
-
     register_setting(
         'danka-settings-cookies',                           // option group
         $section_name . '__title',                          // option name
         array( 'type' => 'string' )
     );
     
+
     add_settings_field(
         $section_name . '__description',                              // id
         "Description",                                          // title
@@ -42,7 +42,6 @@ function danka_register_settings__cookies()
         $section_name,                                          // section
         array( 'name' => $section_name . '__description' )
     );
-
     register_setting(
         'danka-settings-cookies',                           // option group
         $section_name . '__description',                          // option name
@@ -61,6 +60,12 @@ function danka_register_settings__cookies()
         $section_name,                                          // section
         array( 'name' => $section_name . '__link' )
     );
+    register_setting(
+        'danka-settings-cookies',                           // option group
+        $section_name . '__link',                          // option name
+        array( 'type' => 'string' )
+    );
+
 
     $section_name = 'danka__cookies-settings';
 
