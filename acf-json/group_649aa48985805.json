@@ -6,6 +6,7 @@
             "key": "field_649aa4a3abaea",
             "label": "Carrousel de cartes (composant)",
             "name": "carousel_cards",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -24,6 +25,7 @@
                     "key": "field_649aa8d8abaec",
                     "label": "Type de publication",
                     "name": "type_of_posts",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -51,6 +53,7 @@
                     "key": "field_649aa83fabaeb",
                     "label": "",
                     "name": "events",
+                    "aria-label": "",
                     "type": "relationship",
                     "instructions": "",
                     "required": 1,
@@ -85,7 +88,8 @@
                     "return_format": "object",
                     "acfe_bidirectional": {
                         "acfe_bidirectional_enabled": "0"
-                    }
+                    },
+                    "bidirectional_target": []
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -96,6 +100,7 @@
             "key": "field_649aa9af1f6a6",
             "label": "Carrousel pleine largeur (composant)",
             "name": "carousel_full",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -114,6 +119,7 @@
                     "key": "field_649aa9d51f6a7",
                     "label": "Titre",
                     "name": "title",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -134,6 +140,7 @@
                     "key": "field_649aa9ff1f6a8",
                     "label": "",
                     "name": "items",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -149,12 +156,13 @@
                     "min": 2,
                     "max": 10,
                     "layout": "block",
-                    "button_label": "",
+                    "button_label": "Ajouter un élément",
                     "sub_fields": [
                         {
                             "key": "field_649aaa1c1f6a9",
                             "label": "Texte",
                             "name": "text",
+                            "aria-label": "",
                             "type": "text",
                             "instructions": "",
                             "required": 1,
@@ -169,12 +177,14 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_649aa9ff1f6a8"
                         },
                         {
                             "key": "field_649aaa281f6aa",
                             "label": "Image",
                             "name": "image",
+                            "aria-label": "",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -195,12 +205,14 @@
                             "max_size": "",
                             "mime_types": "",
                             "acfe_thumbnail": 0,
-                            "library": "all"
+                            "library": "all",
+                            "parent_repeater": "field_649aa9ff1f6a8"
                         },
                         {
                             "key": "field_649aaa3b1f6ab",
                             "label": "Bouton",
                             "name": "button",
+                            "aria-label": "",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
@@ -210,9 +222,11 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array"
+                            "return_format": "array",
+                            "parent_repeater": "field_649aa9ff1f6a8"
                         }
-                    ]
+                    ],
+                    "rows_per_page": 20
                 }
             ],
             "acfe_group_modal_close": 0,
@@ -223,6 +237,7 @@
             "key": "field_649aab1b44a29",
             "label": "Fichier (composant)",
             "name": "file",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -241,6 +256,7 @@
                     "key": "field_649aab8444a2b",
                     "label": "Texte",
                     "name": "text",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -261,6 +277,7 @@
                     "key": "field_649aab8d44a2c",
                     "label": "",
                     "name": "file",
+                    "aria-label": "",
                     "type": "file",
                     "instructions": "",
                     "required": 0,
@@ -286,6 +303,7 @@
             "key": "field_649aa931576a1",
             "label": "Témoignage (composant)",
             "name": "testimony",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -304,6 +322,7 @@
                     "key": "field_649aa95b5ffa2",
                     "label": "Texte",
                     "name": "text",
+                    "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 1,
@@ -324,6 +343,7 @@
                     "key": "field_649aa97d5ffa3",
                     "label": "Auteur",
                     "name": "author",
+                    "aria-label": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -344,6 +364,7 @@
                     "key": "field_649aa9865ffa4",
                     "label": "Bouton",
                     "name": "button",
+                    "aria-label": "",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -364,6 +385,7 @@
             "key": "field_649aab7244a2a",
             "label": "Accordéons (composant)",
             "name": "accordions",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -382,6 +404,7 @@
                     "key": "field_649aabba44a2d",
                     "label": "Ouvrir un seul à la fois ?",
                     "name": "one_by_one",
+                    "aria-label": "",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
@@ -401,6 +424,7 @@
                     "key": "field_649aabde44a2f",
                     "label": "",
                     "name": "items",
+                    "aria-label": "",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
@@ -415,12 +439,13 @@
                     "min": 1,
                     "max": 0,
                     "layout": "block",
-                    "button_label": "",
+                    "button_label": "Ajouter un élément",
                     "sub_fields": [
                         {
                             "key": "field_649aabd144a2e",
                             "label": "Titre",
                             "name": "title",
+                            "aria-label": "",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -435,12 +460,14 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "parent_repeater": "field_649aabde44a2f"
                         },
                         {
                             "key": "field_649aac234dbcc",
                             "label": "Contenu",
                             "name": "content",
+                            "aria-label": "",
                             "type": "advanced_wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -464,14 +491,54 @@
                             "has_bullist": 1,
                             "has_numlist": 1,
                             "has_link": 1,
-                            "has_forecolor": 0
+                            "has_forecolor": 0,
+                            "parent_repeater": "field_649aabde44a2f"
                         }
-                    ]
+                    ],
+                    "rows_per_page": 20
                 }
             ],
             "acfe_group_modal_close": 0,
             "acfe_group_modal_button": "",
             "acfe_group_modal_size": "large"
+        },
+        {
+            "key": "field_653fb21544fe4",
+            "label": "Embed (composant)",
+            "name": "embed",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_653fb22244fe5",
+                    "label": "Code",
+                    "name": "code",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -491,12 +558,6 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1695654603
+    "show_in_rest": 0,
+    "modified": 1698673241
 }

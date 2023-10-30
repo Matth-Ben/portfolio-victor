@@ -28,8 +28,8 @@
 		<p class="ts-h2 animation--fade-up">Bienvenue</p>
 	</div>
 
-	{# {% if _context._session.welcome %} #}
+	{% if _context._session.welcome %}
 		{{ alert.default() }}
-	{# {% endif %} #}
+	{% endif %}
 </body>
 </html>

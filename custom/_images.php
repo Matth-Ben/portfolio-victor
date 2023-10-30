@@ -135,6 +135,8 @@ class AppImages
         unset( $url_parts[count( $url_parts ) - 1] );
         $new_url = implode( $url_parts ) . '.webp';
 
+        $has_new_image = false;
+
         switch ( $data['type'] ) {
             
             case 'image/jpeg':

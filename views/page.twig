@@ -8,9 +8,5 @@
 		<h1 class="split animation--text" show-element>{{ post.title }}</h1>
 	</div>
 
-	<div class="relative w-full aspect-[5/4]x childs:w-full">
-		{{ image.default(73) }}
-	</div>
-
 	{{ flex_content.default(post.meta('content')) }}
 {% endblock %}

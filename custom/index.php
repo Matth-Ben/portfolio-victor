@@ -14,3 +14,4 @@ require_once get_template_directory() . '/custom/_timber.php';
 require_once get_template_directory() . '/custom/_translate-polylang.php';
 require_once get_template_directory() . '/custom/_welcome.php';
 require_once get_template_directory() . '/custom/_wysiwyg.php';
+require_once get_template_directory() . '/custom/cookies/index.php';
