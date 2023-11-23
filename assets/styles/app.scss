@@ -1,22 +1,33 @@
 @import 'core';
 
+@import 'swiper/css';
 @import 'flickity';
 
 // layouts
 @import 'layouts/Page.scss';
+@import 'layouts/Single.scss';
+@import 'layouts/Archive.scss';
 @import 'layouts/Home.scss';
 
 // components
-@import 'components/headroom.scss';
-@import 'components/button.scss';
-@import 'components/tag.scss';
-@import 'components/card.scss';
+@import 'components/welcome.scss';
 @import 'components/accordion.scss';
+@import 'components/alert.scss';
+@import 'components/animation.scss';
+@import 'components/button.scss';
+@import 'components/card.scss';
+@import 'components/headroom.scss';
+@import 'components/marquee.scss';
+@import 'components/tag.scss';
+@import 'components/cookies-manager.scss';
+@import 'components/youtube-manager.scss';
 
 // acf components
 @import 'acf-components/section.scss';
 @import 'acf-components/carousel-cards.scss';
 @import 'acf-components/carousel-full.scss';
+@import 'acf-components/embed.scss';
+@import 'acf-components/form.scss';
 
 // animation
 :root {
@@ -26,6 +37,7 @@
 }
 
 #app-body {
+    padding-bottom: var(--spacing-l);
     opacity: 1;
     transition: opacity .3s ease;
 }

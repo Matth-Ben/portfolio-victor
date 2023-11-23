@@ -1,11 +1,7 @@
-{% extends "base.twig" %}
+{% extends "base-page.twig" %}
 
-{% block content %}
-    <div class="container flex flex-col gap-xxl my-xxl">
-        <pre>
-            {{ dump(data) }}
-        </pre>
-        
+{% block pageContent %}
+    <div class="container flex flex-col gap-100 my-200">
         {% set path_icons = function('get_template_directory') ~ '/assets/icons/' %}
 
         {% if function('file_exists', path_icons) %}
@@ -25,12 +21,12 @@
             </div>
         {% endif %}
 
-        {% if data %}
+        {% if app_data %}
 
             {# Couleurs #}
             <div class="grid grid-cols-12 gap-y-s">
-                <div class="col-span-full ts-h2 mb-m">Couleurs</div>
-                {% for key, item in data.colors %}
+                <div class="col-span-full ts-h2 mb-m w-col-6">Couleurs</div>
+                {% for key, item in app_data.colors %}
                     <div class="col-span-full">
                         <p>{{ key }} <span class="opacity-40">- {{ item }}</span></p>
                         <div class="h-xxl bg-{{ key }}"></div>
@@ -38,21 +34,27 @@
                 {% endfor %}
             </div>
 
-            {# Titres et paragraphe #}
+            {# Styles de texte #}
             <div>
-                {% for key, item in data.textStyles %}
+                {% for key, item in app_data.textStyles %}
                     {% if key in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] %}
                         <{{ key }}>Heading {{ key|replace({'h': ''}) }}</{{ key }}>
                     {% endif %}
                 {% endfor %}
                 <br>
                 <p>Paragraphe</p>
+                <br>
+                {% for key, item in app_data.textStyles %}
+                    {% if key not in ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'titles', 'body', 'desktop'] %}
+                        <div class="ts-{{ key }}">{{ key }}</div>
+                    {% endif %}
+                {% endfor %}
             </div>
 
             {# Espacements #}
             <div class="grid grid-cols-12 gap-y-s">
                 <div class="col-span-full ts-h2 mb-m">Espacements</div>
-                {% for key, item in data.spacings %}
+                {% for key, item in app_data.spacings %}
                     {% if key != 'desktop' %}
                         <div class="col-span-full flex flex-col gap-s pt-10">
                             <p>{{ key }} <span class="opacity-40">- {{ item }}rem</span></p>
@@ -80,16 +82,10 @@
                     <div></div>
                 </div>
             </div>
-
-            {# Spécifiques #}
-            <div class="grid grid-cols-12 gap-y-s">
-                <div class="col-span-full ts-h2 mb-m">Spécifiques</div>
-                <div class="col-span-full flex flex-col gap-s">
-                    {% for key, item in data.textStyles.specifics %}
-                        <p class="ts-{{ key }}">{{ key }}</p>
-                    {% endfor %}
-                </div>
-            </div>
         {% endif %}
+
+        <pre>
+            {{ dump(app_data) }}
+        </pre>
     </div>
 {% endblock %}

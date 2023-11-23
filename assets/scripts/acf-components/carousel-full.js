@@ -6,5 +6,5 @@ const init = () => {
     } )
 }
 
-document.addEventListener( 'DOMContentLoaded', init )
 document.addEventListener( 'NewContentLoaded', init )
+document.addEventListener( 'ContentLoaded', init )

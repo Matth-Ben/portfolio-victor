@@ -27,12 +27,21 @@ for ( let i = 0; i <= 500; i++ ) {
 }
 
 defaultSpacings.margin = 'var(--margin)'
+defaultSpacings.gap = 'var(--gap)'
 
 if ( data?.breakpoints ) {
     for ( const [key, item] of Object.entries( data.breakpoints ) ) {
         if ( key !== 'desktop' ) {
             screens[key] = `${item}px`
         }
+
+        content += `${key}:block ${key}:hidden ${key}:grid `
+    }
+}
+
+if ( data?.maxColumns ) {
+    for ( const [key, item] of Object.entries( data.maxColumns ) ) {
+        content += `grid-cols-${item} `
     }
 }
 

@@ -1,41 +1,26 @@
-{% import "@components/image.twig" as image %}
+{% macro default(data) %}
+    {% import "@components/card.twig" as card %}
 
-{# Default #}
-{% if variation in 'default' %}
     {% set posts = data[data.type_of_posts] %}
 
     {% if posts %}
-         <div class="carousel carousel--cards flex flex-col gap-l">
-            <h2 class="ts-h3">Liste elements</h2>
-            <div class="carousel__items">
-                {% for p in posts %}
-                    <div class="carousel-cell">
-                        <a class="card card--event" href="{{ p.url }}">
-                            <div class="card__image">
-                                {{ image.default(p.thumbnail) }}
-                                <span class="card__status">Complet</span>
-                            </div>
-                            <div class="card__informations">
-                                <div class="card__taxonomies">
-                                    <span>Catégorie</span>
-                                    <span>Catégorie</span>
-                                </div>
-                                <div>
-                                    <div class="card__title">Titre élément {{ loop.index }}</div>
-                                    <div class="card__description">Wolfgang Amadeus Mozart</div>
-                                </div>
-                                <div class="card__date">Vendredi 12 mai 19:30</div>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
+         <div class="carousel carousel--cards flex flex-col gap-l" show-elements>
+            <h2 class="ts-h3 split animation--text" show-element>Liste elements</h2>
+            <div class="carousel__items swiper animation--fade-up" show-element show-delay="300">
+                <div class="swiper-wrapper">
+                    {% for p in posts %}
+                        <div class="swiper-slide">
+                            {{ card.default(p) }}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
             <div class="flex justify-between">
-                <a class="button button--light" href="#0">
+                <a class="button button--light animation--fade-up" href="#0" show-element show-delay="600">
                     <span>Voir tout</span>
                     {% include "@icons/chevron-right.svg" %}
                 </a>
-                <div class="carousel__navigation">
+                <div class="carousel__navigation animation--fade-up" show-element show-delay="900">
                     <button class="carousel__previous button button--icon button--light">
                         {% include "@icons/arrow-left.svg" %}
                     </button>
@@ -46,9 +31,4 @@
             </div>
         </div>
     {% endif %}
-{% endif %}
-
-{# Test #}
-{% if variation in 'test' %}
-    <p>Test</p>
-{% endif %}
+{% endmacro %}

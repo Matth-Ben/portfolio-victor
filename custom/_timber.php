@@ -5,6 +5,9 @@ add_filter( 'timber/context', function( $context )
 {
     $context['menus'] = get_all_menus();
     $context['assets'] = get_template_directory_uri() . '/assets';
+    $context['_session'] = $_SESSION;
+    $context['_get'] = $_GET;
+    $context['_post'] = $_POST;
 
     return $context;
 } );
@@ -15,6 +18,7 @@ add_filter( 'timber/loader/loader', function ( $loader ) {
     $loader->addPath ( get_template_directory() . "/assets", "assets" );
     $loader->addPath ( get_template_directory() . "/assets/icons", "icons" );
     $loader->addPath ( get_template_directory() . "/assets/images", "images" );
+    $loader->addPath ( get_template_directory() . "/views/utils", "utils" );
     $loader->addPath ( get_template_directory() . "/views/components", "components" );
     $loader->addPath ( get_template_directory() . "/views/acf-components", "acf-components" );
 
@@ -60,6 +64,13 @@ add_filter( 'timber/twig', function( $twig )
             return  json_decode( $data, true );
         }
     } ) );
+
+
+    // custom
+    $twig->addFunction( new \Timber\Twig_Function( 'get_breadcrumbs', function() { return Breadcrumbs::get_breadcrumbs(); } ) );
+    $twig->addFunction( new \Timber\Twig_Function( 'get_share', function() { return SocialNetwork::get_share(); } ) );
+    $twig->addFunction( new \Timber\Twig_Function( 'get_social_network', function() { return SocialNetwork::get_social_network(); } ) );
+
 
 
     //

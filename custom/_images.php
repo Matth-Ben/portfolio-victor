@@ -9,7 +9,6 @@ class AppImages
 {
     public static $sizes = [200, 768, 1024, 1440, 1920, 2560];
 
-
     public static function init()
     {
         add_theme_support( 'post-thumbnail' );
@@ -85,24 +84,29 @@ class AppImages
      */
     public static function get_image_html( $id ) // https://developer.mozilla.org/fr/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
     {
-        $sources = '';
-        $img = '';
-        $alt = esc_attr(get_post_meta( $id, '_wp_attachment_image_alt', true ) );
+        $src = wp_get_attachment_url( $id );
+        $srcset = '';
+        $sizes = null;
+        $data_sizes = [];
 
         foreach ( self::$sizes as $index => $size ) {
             $data = wp_get_attachment_image_src( $id, "size-$size" );
+            $sizes = $sizes === null ? $size : $sizes;
             
             if ( $data ) {
+                $string = $data[1] . '-' . $data[2];
                 $src = $data[0];
-                $sources .= "<source media='(max-width: $size" . "px)' srcset='$src'>";
+                $srcset .= "{$src} {$size}w, ";
 
-                if ( $index === (count( self::$sizes ) - 1 ) ) {
-                    $img = "<img src='$src' alt='$alt' />";
+                if ( !in_array( $string, $data_sizes ) ) {
+                    $data_sizes[] = $string;
                 }
             }
         }
 
-       return "<picture>$sources $img</picture>";
+        $data_sizes = join( ',', $data_sizes );
+
+        return "<img src='$src' srcset='$srcset' sizes='{$sizes}px' data-sizes='{$data_sizes}' />";
     }
 
 
@@ -130,6 +134,8 @@ class AppImages
         $url_parts = explode( '.', $data['url'] );
         unset( $url_parts[count( $url_parts ) - 1] );
         $new_url = implode( $url_parts ) . '.webp';
+
+        $has_new_image = false;
 
         switch ( $data['type'] ) {
             

@@ -13,11 +13,23 @@
 	{{ function('wp_head') }}
 </head>
 
-<body class="{{ body_class }}">
+{% import "@components/alert.twig" as alert %}
+
+<body class="{{ body_class }} {% if _context._session.welcome %}welcome{% endif %}">
+	{% include "@components/header.twig" %}
 	<div data-taxi id="app" role="main">
 		{% block content %}{% endblock %}
 	</div>
-	{# {{ footer.default() }} #}
+	{% include "@components/footer.twig" %}
 	{{ function('wp_footer') }}
+	{% include "_grid-helper.twig" %}
+	
+	<div class="welcome">
+		<p class="ts-h2 animation--fade-up">Bienvenue</p>
+	</div>
+
+	{% if _context._session.welcome %}
+		{{ alert.default() }}
+	{% endif %}
 </body>
 </html>

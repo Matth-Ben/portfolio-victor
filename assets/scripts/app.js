@@ -1,7 +1,9 @@
 import './core'
 
 // components
+import './components/alert'
 import './components/class-accordions'
+import './components/welcome'
 
 // acf components
 import './acf-components/accordions'

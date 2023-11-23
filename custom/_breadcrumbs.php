@@ -1,6 +1,6 @@
 <?php
 
-class CustomBreadcrumbs
+class Breadcrumbs
 {
     public function __construct()
     {
@@ -311,15 +311,14 @@ class CustomBreadcrumbs
 
                 if ( $archive ) {
                     $archive_ancestors = get_item_ancestors_by_url( $archive['url'], $menu->items );
-
                     
                     if ( $archive_ancestors ) {
                         unset( $archive_ancestors[count($archive_ancestors) - 1] );
                         $items = array_merge( $items, $archive_ancestors );
                     }
-                }
 
-                 $items[] = $archive;
+                    $items[] = $archive;
+                }
             }
 
             // S'il existe des posts parents
@@ -342,24 +341,12 @@ class CustomBreadcrumbs
                 }
             }
             
-            else {
+            elseif ( $menu ) {
                 $menu_ancestors = get_item_ancestors_by_id( $post->ID, $menu->items );
     
                 if ( $menu_ancestors ) {
                     unset( $menu_ancestors[count($menu_ancestors) - 1] );
                     $items = array_merge( $items, $menu_ancestors );
-                }
-            }
-        }
-
-        else if ( is_post_type_archive() ) {
-            
-            if ( isset( $archive['url'] ) ) {
-                $archive_ancestors = get_item_ancestors_by_url( $archive['url'], $menu->items );
-    
-                if ( $archive_ancestors ) {
-                    unset( $archive_ancestors[count($archive_ancestors) - 1] );
-                    $items = array_merge( $items, $archive_ancestors );
                 }
             }
         }
@@ -377,6 +364,12 @@ class CustomBreadcrumbs
             $post_type = $wp_query->query['post_type'];
             $text = $wp_query->queried_object->labels->name;
             $url = get_post_type_archive_link( $post_type );
+            $archive_ancestors = get_item_ancestors_by_url( $url, $menu->items );
+
+            if ( $archive_ancestors ) {
+                unset( $archive_ancestors[count($archive_ancestors) - 1] );
+                $items = array_merge( $items, $archive_ancestors );
+            }
             
             if ( function_exists( 'get_field' ) ) {
                 $acf_title = get_field( 'title', $post_type . '_archive' );
@@ -393,4 +386,4 @@ class CustomBreadcrumbs
     }
 }
 
-new  CustomBreadcrumbs();
+new  Breadcrumbs();

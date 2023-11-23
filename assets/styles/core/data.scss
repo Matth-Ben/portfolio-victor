@@ -29,6 +29,7 @@ $data: (
     darkultrasoft: rgba(0,0,0,.2),
     lightsoft: rgba(255,255,255,.5),
     lightultrasoft: rgba(255,255,255,.2),
+    red: #EA4E32,
     primary: #673FFF,
     secondary: #230F50
   ),
@@ -72,18 +73,16 @@ $data: (
       line-height: 2.4rem,
       font-family: "primary"
     ),
-    specifics: (
-      label: (
-        font-size: 1.6rem,
-        line-height: 1.8rem,
-        font-family: "heading"
-      ),
-      mini: (
-        font-size: 1.2rem,
-        line-height: 1.4rem,
-        font-weight: 400,
-        font-family: "heading"
-      )
+    label: (
+      font-size: 1.6rem,
+      line-height: 1.8rem,
+      font-family: "heading"
+    ),
+    mini: (
+      font-size: 1.2rem,
+      line-height: 1.4rem,
+      font-weight: 400,
+      font-family: "heading"
     ),
     desktop: (
       h1: (

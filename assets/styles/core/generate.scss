@@ -3,7 +3,7 @@
     @each $selector, $styles in $settings {
 
         // default
-        @if $selector != 'desktop' and $selector != 'specifics' and $selector != 'titles' {
+        @if $selector != 'desktop' and $selector != 'titles' {
             
             #{$selector} {
                 @each $property, $value in $styles {
@@ -77,44 +77,44 @@
         }
 
         // specifics
-        @if $selector == 'specifics' {
+        // @if $selector == 'specifics' {
             
-            @each $_selector, $_styles in $styles {
+        //     @each $_selector, $_styles in $styles {
                 
-                // .ts-#{$_selector} {
-                //     @each $property, $value in $_styles {
-                //         @if $property == 'font-family' {
-                //             #{$property}: font-family($value);
-                //         }
-                //         @else {
-                //             #{$property}: #{$value};
-                //         }
-                //     }
-                // }
+        //         // .ts-#{$_selector} {
+        //         //     @each $property, $value in $_styles {
+        //         //         @if $property == 'font-family' {
+        //         //             #{$property}: font-family($value);
+        //         //         }
+        //         //         @else {
+        //         //             #{$property}: #{$value};
+        //         //         }
+        //         //     }
+        //         // }
 
-                .ts-#{$_selector} {
-                    @each $property, $value in $_styles {
-                        @if $property == 'font-family' {
-                            #{$property}: font-family($value);
-                        }
-                        @else {
-                            #{$property}: var(--ts-#{$_selector}-#{$property});
-                        }
-                    }
-                }
+        //         .ts-#{$_selector} {
+        //             @each $property, $value in $_styles {
+        //                 @if $property == 'font-family' {
+        //                     #{$property}: font-family($value);
+        //                 }
+        //                 @else {
+        //                     #{$property}: var(--ts-#{$_selector}-#{$property});
+        //                 }
+        //             }
+        //         }
     
-                :root {
-                    @each $property, $value in $_styles {
-                        @if $property == 'font-family' {
-                            // #{$property}: font-family($value);
-                        }
-                        @else {
-                            --ts-#{$_selector}-#{$property}: #{$value};
-                        }
-                    }
-                }
-            }
-        }
+        //         :root {
+        //             @each $property, $value in $_styles {
+        //                 @if $property == 'font-family' {
+        //                     // #{$property}: font-family($value);
+        //                 }
+        //                 @else {
+        //                     --ts-#{$_selector}-#{$property}: #{$value};
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
 
@@ -337,6 +337,6 @@
     }
 
     :root {
-        --width-of-layout: calc(100vw - 2 * var(--margin));
+        --width-of-layout: calc(100vw - var(--scrollbar-width) - 2 * var(--margin));
     }
 }

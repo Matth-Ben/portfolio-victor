@@ -1,14 +1,19 @@
-{% import "@components/image.twig" as image %}
-
 {# Default #}
-{% if variation in 'default' %}
+{% macro default(data) %}
+    {% import "@components/image.twig" as image %}
+
     {% if data.items %}
-         <div class="carousel carousel--full">
+        <div class="carousel carousel--full">
             {% for item in data.items %}
                 <div class="carousel__item {% if loop.index == 1 %}active{% endif %}">
                     <div class="carousel__item-wrapper">
-                        <div class="carousel__item-image">
-                            {{ image.full(item.image) }}
+                        <div class="carousel__item-image overflow-hidden">
+                            <div class="w-full h-full scale-[1.2]">
+                                <div class="w-full h-full" parallax>
+                                    {{ image.full(item.image) }}
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 w-full h-full bg-lightultrasoft z-[0]"></div>
                         </div>
                         <div class="carousel__item-informations">
                             <p class="carousel__item-text">{{ item.text }}</p>
@@ -34,9 +39,4 @@
             </div>
         </div>
     {% endif %}
-{% endif %}
-
-{# Test #}
-{% if variation in 'test' %}
-    <p>Test</p>
-{% endif %}
+{% endmacro %}
