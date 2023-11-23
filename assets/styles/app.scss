@@ -27,6 +27,7 @@
 @import 'acf-components/carousel-cards.scss';
 @import 'acf-components/carousel-full.scss';
 @import 'acf-components/embed.scss';
+@import 'acf-components/form.scss';
 
 // animation
 :root {
@@ -36,6 +37,7 @@
 }
 
 #app-body {
+    padding-bottom: var(--spacing-l);
     opacity: 1;
     transition: opacity .3s ease;
 }
