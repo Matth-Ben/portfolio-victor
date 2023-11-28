@@ -340,3 +340,67 @@
         --width-of-layout: calc(100vw - var(--scrollbar-width) - 2 * var(--margin));
     }
 }
+
+
+// lists
+@if variable-exists(data) {
+    $lists: map-get($data, 'lists');
+    
+    @if $lists {
+        @each $key, $value in $lists {
+            $className: "list--" + $key;
+
+            @if $key == "default" {
+                $className: "list";
+            }
+
+            @each $k, $v in $value {
+                @include min-width($k) {
+                    .#{$className} {
+                        grid-template-columns: repeat(#{$v}, minmax(0, 1fr));
+                    }
+                }
+            }
+
+            .#{$className} {
+                gap: var(--gap);
+            }
+        }
+    }
+}
+
+
+// animations
+@if variable-exists(data) {
+    $animations: map-get($data, 'animations');
+    
+    @if $animations {
+        @each $key, $value in $animations {
+            $duration: map-get($value, 'duration');;
+            $timing: map-get($value, 'timing');
+
+            @if $key == "default" {
+                :root {
+                    --animation-duration: #{$duration};
+                    --animation-timing: #{$timing};
+                    --animation: var(--animation-duration) var(--animation-timing);
+                }
+
+                .animation {
+                    animation: all var(--animation);
+                }
+            }
+            @else {
+                :root {
+                    --animation-#{$key}-duration: #{$duration};
+                    --animation-#{$key}-timing: #{$timing};
+                    --animation-#{$key}: var(--animation-duration) var(--animation-timing);
+                }
+
+                .animation--#{$key} {
+                    animation: all var(--animation-#{$key});
+                }
+            }
+        }
+    }
+}
