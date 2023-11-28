@@ -66,21 +66,24 @@
 
             {# Listes #}
             <div>
-                <div class="col-span-full ts-h2 mb-m">Liste</div>
-                <div class="grid list child:h-xxl child:bg-dark child:rounded">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <div class="col-span-full ts-h2 mb-m">Listes</div>
+                {% for key, value in app_data.lists %}
+                    <div class="col-span-full ts-h3 mb-m">{{ key }}</div>
+                    <div class="grid list{% if key != 'default' %}--{{ key }}{% endif %} mb-xl child:h-xxl child:bg-dark child:rounded">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                {% endfor %}
             </div>
         {% endif %}
 

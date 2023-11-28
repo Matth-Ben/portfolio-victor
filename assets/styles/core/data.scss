@@ -129,5 +129,31 @@ $data: (
     xl: 4,
     xxl: 4
   ),
-  radius: 0.8
+  radius: 0.8,
+  lists: (
+    default: (
+      s: 1,
+      m: 2,
+      l: 3,
+      xl: 4,
+      xxl: 4
+    ),
+    event: (
+      s: 1,
+      m: 2,
+      l: 3,
+      xl: 4,
+      xxl: 4
+    )
+  ),
+  animations: (
+    default: (
+      duration: 900,
+      timing: ease
+    ),
+    secondary: (
+      duration: 500,
+      timing: ease
+    )
+  )
 );
