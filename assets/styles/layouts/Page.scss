@@ -10,4 +10,18 @@
     .section {
         @apply container;
     }
+
+    .cover {
+        .image {
+            @apply child:h-full;
+        }
+
+        img {
+            @apply h-full;
+        }
+
+        svg {
+            @apply w-full h-auto;
+        }
+    }
 }

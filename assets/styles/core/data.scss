@@ -76,6 +76,10 @@ $data: (
       line-height: 3.6rem,
       font-family: "primary"
     ),
+    mini: (
+      font-size: 1.4rem,
+      line-height: 2.2rem
+    ),
     desktop: (
       h1: (
         font-size: 19rem,
@@ -87,8 +91,8 @@ $data: (
         line-height: 12.1rem
       ),
       h3: (
-        font-size: 3.5rem,
-        line-height: 4.2rem,
+        font-size: 6rem,
+        line-height: 7.2rem,
         font-family: "primary"
       )
     )

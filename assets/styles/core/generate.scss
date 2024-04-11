@@ -2,21 +2,21 @@
     
     @each $selector, $styles in $settings {
 
-        // default
-        @if $selector != 'desktop' and $selector != 'titles' {
-            
-            #{$selector} {
-                @each $property, $value in $styles {
-                    @if $property == 'font-family' {
-                        #{$property}: font-family($value);
-                    }
-                    @else {
-                        #{$property}: var(--ts-#{$selector}-#{$property});
-                    }
-                }
-            }
-            
-            .ts-#{$selector} {
+        // titles
+        @if $selector == 'titles' {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            .ts-h1,
+            .ts-h2,
+            .ts-h3,
+            .ts-h4,
+            .ts-h5,
+            .ts-h6 {
                 @each $property, $value in $styles {
                     @if $property == 'font-family' {
                         #{$property}: font-family($value);
@@ -39,24 +39,24 @@
             }
         }
 
-        // titles
-        @if $selector == 'titles' {
-
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6,
-            .ts-h1,
-            .ts-h2,
-            .ts-h3,
-            .ts-h4,
-            .ts-h5,
-            .ts-h6 {
+        // default
+        @if $selector != 'desktop' and $selector != 'titles' {
+            
+            #{$selector} {
                 @each $property, $value in $styles {
                     @if $property == 'font-family' {
                         #{$property}: font-family($value);
+                    }
+                    @else {
+                        #{$property}: var(--ts-#{$selector}-#{$property});
+                    }
+                }
+            }
+            
+            .ts-#{$selector} {
+                @each $property, $value in $styles {
+                    @if $property == 'font-family' {
+                        #{$property}: font-family($value) !important;
                     }
                     @else {
                         #{$property}: var(--ts-#{$selector}-#{$property});

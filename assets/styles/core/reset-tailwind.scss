@@ -4,3 +4,22 @@
     padding-left: var(--margin);
     padding-right: var(--margin);
 }
+
+/* du texte sélectionné sera jaune sur fond rouge */
+::-moz-selection {
+    @apply text-secondary bg-primary;
+}
+  
+::selection {
+    @apply text-secondary bg-primary;
+}
+
+.bg-primary {
+    ::-moz-selection {
+        @apply text-primary bg-secondary;
+    }
+      
+    ::selection {
+        @apply text-primary bg-secondary;
+    }
+}

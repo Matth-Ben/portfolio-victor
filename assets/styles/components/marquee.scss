@@ -1,7 +1,8 @@
 .marquee {
     display: flex;
-    width: 100%;
+    width: calc(100% + (var(--margin) * 2));
     overflow: hidden;
+    left: calc(var(--margin) * -1);
 
     & > * {
         padding-right: var(--spacing-m);
