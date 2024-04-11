@@ -1,4 +1,4 @@
-import Marquee from '../class/class-marquee'
+import Marquee from './class-marquee'
 
 export default ( () => {
     const animation_duration = 1800

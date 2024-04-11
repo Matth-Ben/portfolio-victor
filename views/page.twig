@@ -5,7 +5,44 @@
 
 {% block pageContent %}
 	<div class="container mb-xl">
-		<h1 class="split animation--text" show-element>{{ post.title }}</h1>
+		<div class="relative grid grid-cols-8 d:grid-cols-12 gap">
+			<div class="relative z-10 col-span-6 d:col-span-4 col-start-2 d:col-start-5">
+				<div class="relative">
+					<div class="rounded-[1rem] overflow-hidden child:aspect-[446/546]">
+						{{ image.default(post.cover_image) }}
+					</div>
+
+					<div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-133 h-133">
+						<div class="child:bg-transparent">
+							{{ image.default(post.cover_svg) }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="marquee absolute top-1/2 left-0 -translate-y-1/2 text-primary py-m overflow-hidden w-full flex items-center gap">
+				<div class="marquee--content ts-h2 !leading-none italic flex items-center gap w-max">
+					{% for i in 0..7 %}
+						<span class="block w-max">{{post.cover_title}}</span>
+						<span class="separator">-</span>
+					{% endfor %}
+				</div>
+				<div class="marquee--content ts-h2 !leading-none italic flex items-center gap w-max">
+					{% for i in 0..7 %}
+						<span class="block w-max">{{post.cover_title}}</span>
+						<span class="separator">-</span>
+					{% endfor %}
+				</div>
+			</div>
+	</div>
+
+		<div class="grid grid-cols-8 d:grid-cols-12 gap mt-l">
+			<div class="col-span-6 d:col-span-4 col-start-2 d:col-start-5">
+				<div class="text-center d:px-50">
+					{{ fn('wpautop', post.cover_text) }}
+				</div>
+			</div>
+		</div>
 	</div>
 
 	{{ flex_content.default(post.meta('content')) }}
