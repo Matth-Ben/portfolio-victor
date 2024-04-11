@@ -1,0 +1,18 @@
+{% macro default(data) %}
+    <div class="list-links">
+        <div class="container">
+            {% for item in data.links %}
+                <a href="{{ item.link.url }}" target="_blank" class="list-link">
+                    <div class="flex items-center justify-between w-full">
+                        <div class="relative overflow-hidden pr-10">
+                            <span class="list-link__text">{{ item.link.title }}</span>
+                            <span class="list-link__textHover">{{ item.link.title }}</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right"></i>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endmacro %}

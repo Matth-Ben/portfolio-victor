@@ -1,0 +1,33 @@
+.list-links {
+    .list {
+        &-link {
+            @apply block w-full py-15 px-30 d:px-57 border-t last:border-b border-primary transition ease-in-out duration-200;
+
+            @media (hover: hover) {
+                &:hover {
+                    @apply text-secondary bg-primary;
+
+                    .list-link {
+                        &__text {
+                            @apply -translate-y-full;
+            
+                            &Hover {
+                                @apply translate-y-0 delay-100;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__text {
+                @apply relative block ts-big italic transition ease-in-out duration-200 delay-100;
+
+                &Hover {
+                    font-family: 'PP Editorial Old' !important;
+
+                    @apply absolute top-0 left-0 ts-big italic translate-y-full transition ease-in-out duration-200;
+                }
+            }
+        }
+    }
+}
