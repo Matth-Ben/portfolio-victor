@@ -83,7 +83,7 @@
         "desktop": {
             "h1": {
                 "font-size": "19rem",
-                "line-height": "28.5rem",
+                "line-height": "1",
                 "font-family": "primary"
             },
             "h2": {

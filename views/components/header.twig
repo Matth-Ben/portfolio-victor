@@ -1,9 +1,7 @@
-{% import "@utils/search.twig" as search %}
-
 <header class="header container">
     <nav class="flex justify-between items-center mt-margin">
         <a class="block h-50 child:h-full" href="{{ function('get_bloginfo', 'url') }}">
-            {% include "@assets/svg/logo.svg" %}
+            Victor Ravinet
         </a>
         {% if menus['header-primary'] and menus['header-primary'].items %}
             <ul class="flex gap-xl">
@@ -17,7 +15,5 @@
                 {% endif %}
             </ul>
         {% endif %}
-
-        {{ search.default() }}
     </nav>
 </header>
