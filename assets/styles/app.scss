@@ -3,6 +3,8 @@
 @import 'swiper/css';
 @import 'flickity';
 
+@import 'fonts.scss';
+
 // layouts
 @import 'layouts/Page.scss';
 @import 'layouts/Single.scss';
@@ -40,6 +42,10 @@
     padding-bottom: var(--spacing-l);
     opacity: 1;
     transition: opacity .3s ease;
+}
+
+body {
+    @apply bg-secondary text-primary;
 }
 
 .hide-article #app-body {

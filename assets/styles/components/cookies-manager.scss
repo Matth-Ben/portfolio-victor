@@ -41,11 +41,11 @@
         }
         
         &__description {
-            @apply ts-mini max-w-[30rem];
+            @apply max-w-[30rem];
         }
         
         &__privacy-policy {
-            @apply ts-mini underline;
+            @apply underline;
         }
 
         &__buttons {
@@ -74,7 +74,7 @@
             @apply flex justify-between gap-l;
 
             span {
-                @apply ts-label;
+                @apply ts-cta;
             }
 
             button {

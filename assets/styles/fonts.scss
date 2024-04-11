@@ -1,16 +1,134 @@
 @font-face {
-    font-family: MonumentGrotesk, sans-serif;
-    src: url("../assets/fonts/monument-grotesk/MonumentGroteskRegular.otf") format("opentype");
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-Black.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: MonumentGrotesk, sans-serif;
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-Light.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-ExtraLight.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-ExtraBold.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-Thin.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/Inter-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Inter/Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Editorial Old';
+    src: url('../assets/fonts/PPEditorial/PPEditorialOld-Ultrabold.woff2') format('woff2'),
+        url('../assets/fonts/PPEditorial/PPEditorialOld-Ultrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Editorial Old';
+    src: url('../assets/fonts/PPEditorial/PPEditorialOld-UltralightItalic.woff2') format('woff2'),
+        url('../assets/fonts/PPEditorial/PPEditorialOld-UltralightItalic.woff') format('woff');
+    font-weight: 200;
     font-style: italic;
-    src: url("../assets/fonts/monument-grotesk/MonumentGroteskItalic.otf") format("opentype");
+    font-display: swap;
 }
 
 @font-face {
-    font-family: MonumentGrotesk, sans-serif;
-    font-weight: 700;
-    src: url("../assets/fonts/monument-grotesk/MonumentGroteskBold.otf") format("opentype");
+    font-family: 'PP Editorial Old';
+    src: url('../assets/fonts/PPEditorial/PPEditorialOld-Italic.woff2') format('woff2'),
+        url('../assets/fonts/PPEditorial/PPEditorialOld-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Editorial Old';
+    src: url('../assets/fonts/PPEditorial/PPEditorialOld-Ultralight.woff2') format('woff2'),
+        url('../assets/fonts/PPEditorial/PPEditorialOld-Ultralight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Editorial Old';
+    src: url('../assets/fonts/PPEditorial/PPEditorialOld-Regular.woff2') format('woff2'),
+        url('../assets/fonts/PPEditorial/PPEditorialOld-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Editorial Old';
+    src: url('../assets/fonts/PPEditorial/PPEditorialOld-UltraboldItalic.woff2') format('woff2'),
+        url('../assets/fonts/PPEditorial/PPEditorialOld-UltraboldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
 }

@@ -30,12 +30,12 @@ $data: (
     lightsoft: rgba(255,255,255,.5),
     lightultrasoft: rgba(255,255,255,.2),
     red: #EA4E32,
-    primary: #673FFF,
-    secondary: #230F50
+    primary: #6D6D46,
+    secondary: #F2F1EC
   ),
   fonts: (
     heading: (
-      name: Poppins,
+      name: PP Editorial Old,
       serif: sans-serif
     ),
     primary: (
@@ -56,38 +56,25 @@ $data: (
       font-size: 3.2rem,
       line-height: 3.6rem
     ),
-    h4: (
-      font-size: 2.4rem,
-      line-height: 2.8rem
-    ),
-    h5: (
-      font-size: 2rem,
-      line-height: 2.4rem
-    ),
     titles: (
       font-weight: 400,
       font-family: "heading"
     ),
     body: (
       font-size: 1.8rem,
+      line-height: 3.2rem,
+      font-family: "primary"
+    ),
+    cta: (
+      font-size: 2rem,
       line-height: 2.4rem,
       font-family: "primary"
     ),
-    label: (
-      font-size: 1.6rem,
-      line-height: 1.8rem,
-      font-family: "heading"
-    ),
-    mini: (
-      font-size: 1.2rem,
-      line-height: 1.4rem,
-      font-weight: 400,
-      font-family: "heading"
-    ),
     desktop: (
       h1: (
-        font-size: 5.4rem,
-        line-height: 5.8rem
+        font-size: 19rem,
+        line-height: 28.5rem,
+        font-family: "primary"
       ),
       h2: (
         font-size: 4rem,
