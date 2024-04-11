@@ -1,0 +1,16 @@
+{% macro default(data) %}
+    <div class="contents">
+        <div class="container">
+            <div class="grid grid-cols-6 d:grid-cols-12 gap items-end">
+                <div class="col-span-6 d:col-span-7">
+                    <div class="ts-h3 italic">
+                        {{ fn('wpautop', data.primary_content) }}
+                    </div>
+                </div>
+                <div class="col-span-5 d:col-span-3 col-start-2 d:col-start-9 mt-m d:mt-0">
+                    {{ fn('wpautop', data.secondary_content) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
