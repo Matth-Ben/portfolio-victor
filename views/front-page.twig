@@ -6,13 +6,13 @@
 {% set data = function('get_fields') %}
 
 {% block pageContent %}
-    <div class="hero flex relative h-screen p-margin overflow-hidden" show-elements>
-        <div class="flex flex-col items-center justify-center gap w-full">
+    <div class="hero flex relative h-screen overflow-hidden" show-elements>
+        <div class="relative flex flex-col items-center justify-center gap w-full">
             {% if data.hero.title %}
                 <h1 class="text-center italic font-light">{{ data.hero.title }}</h1>
             {% endif %}
             {% if data.hero.text %}
-                <div class="ts-mini text-center w-col-4">{{ data.hero.text }}</div>
+                <div class="ts-mini absolute bottom-margin left-0 right-0 mx-auto text-center w-col-3">{{ data.hero.text }}</div>
             {% endif %}
         </div>
     </div>
