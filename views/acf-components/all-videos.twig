@@ -1,0 +1,15 @@
+{% macro default(data) %}
+    <div class="all-videos">
+        <div class="container">
+            <div class="relative">
+                <div class="w-full h-full aspect-video overflow-hidden rounded-[1rem]">
+                    <div class="vimeo w-full h-full child:w-full child:h-full" data-video="879355497"></div>
+                    <a href="#" class="absolute bottom-30 left-30">All my videos</a>
+                </div>
+                <div class="custom-progress-bar absolute bottom-[-2rem] left-0 w-full bg-gray-300">
+                    <div class="custom-progress-bar--content h-10 bg-blue-500 pointer-events-auto" style="width: {{ data.progress }};"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

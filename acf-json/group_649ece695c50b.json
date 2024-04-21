@@ -19,6 +19,9 @@
             "layout": "block",
             "acfe_seamless_style": 0,
             "acfe_group_modal": 0,
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large",
             "sub_fields": [
                 {
                     "key": "field_6617b07de3980",
@@ -114,10 +117,7 @@
                     "media_upload": 1,
                     "delay": 0
                 }
-            ],
-            "acfe_group_modal_close": 0,
-            "acfe_group_modal_button": "",
-            "acfe_group_modal_size": "large"
+            ]
         },
         {
             "key": "field_649ece696102b",
@@ -227,7 +227,7 @@
                 },
                 "layout_6617af9e02dc6": {
                     "key": "layout_6617af9e02dc6",
-                    "name": "list_videos",
+                    "name": "all_videos",
                     "label": "Toutes mes vidéos",
                     "display": "block",
                     "sub_fields": [
@@ -343,5 +343,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1712828562
+    "modified": 1713697582
 }
