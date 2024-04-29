@@ -14,7 +14,11 @@ class CustomVimeo
         };
 
         const player = new Vimeo(element, options);
+        const progressBar = document.querySelector('.custom-progress-bar');
+        const progressBarContent = document.querySelector('.custom-progress-bar--content');
         var soundButton = document.querySelector('#sound-button');
+        var resetButton = document.querySelector('#reset-button');
+
         updateProgressBar(0);
 
 
@@ -31,8 +35,7 @@ class CustomVimeo
 
         function updateProgressBar(progress) {
             // Update the progress bar element with the new progress value
-            const progressBar = document.querySelector('.custom-progress-bar--content');
-            progressBar.style.width = progress + '%';
+            progressBarContent.style.width = progress + '%';
         }
 
         function setVideoProgress(progress) {
@@ -42,7 +45,6 @@ class CustomVimeo
             });
         }
 
-        const progressBar = document.querySelector('.custom-progress-bar');
         progressBar.addEventListener('click', function(event) {
             const progressBarWidth = progressBar.offsetWidth;
             const clickX = event.offsetX;
@@ -63,6 +65,20 @@ class CustomVimeo
                     player.setVolume(1);
                     soundButton.textContent = 'Sound ON';
                 }
+            });
+        });
+
+        // Gérez les clics sur le bouton de réinitialisation
+        resetButton.addEventListener('click', function() {
+            // Arrêtez la vidéo
+            player.pause();
+            // Réinitialisez le temps de la vidéo à 0
+            player.setCurrentTime(0);
+            // Réinitialisez la barre de progression
+            progressBarContent.style.width = '0%';
+            // Affichez à nouveau l'image de mise en avant Vimeo
+            player.loadVideo(options.id).then(function(id) {
+                // la vidéo est chargée
             });
         });
     }
