@@ -18,9 +18,22 @@ class CustomVimeo
         const progressBarContent = document.querySelector('.custom-progress-bar--content');
         var soundButton = document.querySelector('#sound-button');
         var resetButton = document.querySelector('#reset-button');
+        var playButton = document.querySelector('#play-button');
+        var allVideosButton = document.querySelector('#all-videos-button');
 
         updateProgressBar(0);
 
+        // Gérez l'événement 'play' du lecteur Vimeo
+        player.on('play', function() {
+            // Affichez les boutons et la barre de progression
+            resetButton.style.display = 'block';
+            soundButton.style.display = 'block';
+            progressBar.style.display = 'block';
+
+            // Cachez le bouton "Play" et le bouton "All videos"
+            playButton.style.display = 'none';
+            allVideosButton.style.display = 'none';
+        });
 
         player.on('timeupdate', function(data) {
             const currentTime = data.seconds;
@@ -76,6 +89,14 @@ class CustomVimeo
             player.setCurrentTime(0);
             // Réinitialisez la barre de progression
             progressBarContent.style.width = '0%';
+            // Cachez les boutons et la barre de progression
+            resetButton.style.display = 'none';
+            soundButton.style.display = 'none';
+            progressBar.style.display = 'none';
+
+            // Affichez le bouton "Play" et le bouton "All videos"
+            playButton.style.display = 'block';
+            allVideosButton.style.display = 'block';
             // Affichez à nouveau l'image de mise en avant Vimeo
             player.loadVideo(options.id).then(function(id) {
                 // la vidéo est chargée
