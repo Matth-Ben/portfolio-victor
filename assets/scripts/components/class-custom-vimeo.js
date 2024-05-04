@@ -63,7 +63,7 @@ class CustomVimeo
             const clickX = event.offsetX;
             const progress = (clickX / progressBarWidth) * 100;
             setVideoProgress(progress);
-        });
+        }); 
 
         // Gérez les clics sur le bouton de son
         soundButton.addEventListener('click', function() {
