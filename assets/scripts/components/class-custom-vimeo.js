@@ -79,7 +79,7 @@ class CustomVimeo
                     soundButton.textContent = 'Sound ON';
                 }
             });
-        });
+        }); 
 
         // Gérez les clics sur le bouton de réinitialisation
         resetButton.addEventListener('click', function() {
